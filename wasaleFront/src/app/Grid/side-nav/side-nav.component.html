@@ -1,6 +1,33 @@
 <mat-nav-list fxLayout="row wrap" fxLayoutAlign="center start">
+  <!-- in the future make it photo and clickable button -->
+  <div
+    *ngIf="loggedIn"
+    class="profile-container"
+    fxFlex="100"
+    fxLayout="row wrap"
+    fxLayoutAlign="center center"
+  >
+    <div class="photo" fxLayout="row wrap" fxLayoutAlign="center center">
+      <mat-icon inline="true">account_circle</mat-icon>
+    </div>
+    <h4 fxFlex="100"><span>مرحبا</span>{{ userName }}</h4>
+  </div>
+  <!--  -->
+  <!-- animation if not logged yet -->
+  <div
+    *ngIf="!loggedIn"
+    class="notLoggedYet"
+    fxFlex="100"
+    fxLayout="row wrap"
+    fxLayoutAlign="center center"
+  >
+    <span>هاتلي</span>
+    <img fxFlex="30" src="../../../assets/images/loginBanner.gif" title="هاتلي و وديلي" />
+    <span>وديلي</span>
+  </div>
   <!--  -->
   <a
+    class="link"
     mat-list-item
     fxFlex="100"
     *ngFor="let link of links"
@@ -11,4 +38,8 @@
     <span class="nav-caption">{{ link.disc }}</span>
   </a>
   <!--  -->
+  <a *ngIf="loggedIn" class="logOut" fxFlex="100" fxLayout="row" (click)="logOut()">
+    <mat-icon>logout</mat-icon>
+    <span>تسجيل الخروج</span>
+  </a>
 </mat-nav-list>

@@ -3,21 +3,92 @@
 }
 mat-nav-list {
   background-color: whitesmoke;
-  height: 100%;
+  min-height: 100%;
 }
-a {
+
+// not logged yet
+.notLoggedYet {
+  min-height: 80px;
+  text-align: center;
+  img {
+    border-radius: 50%;
+    border: 2px solid #ff6f00;
+  }
+  span {
+    margin: 0 15px;
+    color: #ff6f00;
+    font-size: 22px;
+    text-decoration: underline;
+  }
+}
+// when logged in
+.profile-container {
+  min-height: 150px;
+  .photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #ff6f00;
+    background-color: rgb(225, 225, 225);
+    text-align: center;
+    mat-icon {
+      height: 100px;
+      width: 100px;
+      font-size: 100px;
+      color: #8f8f8f;
+    }
+  }
+  h4 {
+    text-align: center;
+  }
+  span {
+    color: #ff6f00;
+    margin: 0 5px;
+  }
+}
+
+.link {
   text-decoration: none;
   color: white;
+  border-right: 3px solid #ff6f00;
   border-left: 3px solid #ff6f00;
   margin: 5px auto;
-
+  .nav-caption {
+    color: rgb(56, 56, 56);
+  }
   mat-icon {
     margin: 0 20px;
     color: #ff6f00;
   }
 }
 
-a:hover,
-a:active {
-  color: lightgray;
+.link:hover,
+.link:active {
+  color: #ff6f00;
+  .nav-caption {
+    color: #ff6f00;
+  }
+}
+
+// log out button
+.logOut {
+  text-decoration: none;
+  color: white;
+  border-right: 3px solid #0a2b58e3;
+  border-left: 3px solid#0a2b58e3;
+  margin: 5px auto;
+  padding: 10px;
+  color: #0a2b58e3;
+
+  mat-icon {
+    margin: 0 20px;
+  }
+}
+
+.logOut:hover,
+.logOut:active {
+  color: #ff6f00;
+  .nav-caption {
+    color: #ff6f00;
+  }
 }

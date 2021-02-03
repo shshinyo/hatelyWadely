@@ -21,14 +21,13 @@ import { distinct, map, tap } from "rxjs/Operators";
 import { User } from "src/app/Interfaces/interfaces.interface";
 import { UsersService } from "src/app/services/users.service";
 @Component({
-  selector: "app-offers", 
+  selector: "app-offers",
   templateUrl: "./offers.component.html",
   styleUrls: ["./offers.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OffersComponent implements OnInit {
   // showing form
-  winHeight
   register = false;
   registered = false;
   // toggleDec
@@ -59,10 +58,10 @@ export class OffersComponent implements OnInit {
     }, 200);
     this.register = true;
   }
-
+  // listen to window
   @HostListener("window:resize", ["$event"])
   getScreenSize(event?) {
-    this.winHeight = window.innerHeight;
+    // this.winHeight = window.innerHeight;
     this.winWidth = window.innerWidth;
     this.winWidth >= 1000 ? (this.play = true) : (this.play = false);
   }

@@ -1,6 +1,7 @@
 body {
   scroll-behavior: smooth;
 }
+
 .bannerDiv {
   background-image: url("../../../assets/images/delivery-man-holding-paper-bag-and-showing-thumb-up-in-red-uniform.jpg");
   background-position: 50%;
@@ -27,21 +28,44 @@ body {
     font-size: large;
     font-weight: bold;
     font-family: "serif";
-    padding: 15px;
-    width: 200px;
-    margin: 0 10px 10px 10px;
-    transition: all 0.1s ease-in-out;
+    padding: 10px;
+    width: 150px;
+    margin: 10px;
+    transition: all 0.3s ease-in-out;
   }
   button:hover {
     background-color: transparent;
-    color: #dc6206;
+    color: #fff;
     border: 5px solid white;
-    font-size: large;
+    font-size: 22px;
     font-weight: bold;
     font-family: "serif";
     padding: 15px;
     width: 200px;
-    margin: 0 10px 10px 10px;
+  }
+
+  .login {
+    button {
+      background-color: rgb(0 0 0 / 14%);
+      border: 5px solid #dc6206;
+      color: white;
+      font-size: large;
+      font-weight: bold;
+      font-family: "serif";
+      padding: 10px;
+      width: 300px;
+      margin: 0 10px 10px 10px;
+      transition: all 0.3s ease-in-out;
+    }
+    button:hover {
+      background-color: #dc6206;
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+      font-family: "serif";
+      padding: 15px;
+      width: 350px;
+    }
   }
 }
 
@@ -280,42 +304,6 @@ body {
   }
 }
 
-// .toTop {
-//   position: fixed;
-//   bottom: 15px;
-//   right: 30px;
-//   height: 60px;
-//   border-radius: 50%;
-//   z-index: 3;
-//   transition: all 0.4s ease-in-out;
-
-//   button {
-//     position: relative;
-//     height: 60px;
-//     border-radius: 50%;
-//     background-color: rgba(204, 204, 204, 0.552);
-//     color: white;
-//     font-weight: bold;
-//     transition: all 0.2s ease-in-out;
-//     i {
-//       position: relative;
-//       color: #ccc;
-//       font-size: 30px;
-//       transition: all 0.2s ease-in-out;
-//     }
-//   }
-
-//   button:hover {
-//     background-color: #d35d03;
-//     -webkit-box-shadow: 0px 0px 24px -8px rgba(0, 0, 0, 1);
-//     -moz-box-shadow: 0px 0px 24px -8px rgba(0, 0, 0, 1);
-//     box-shadow: 0px 0px 24px -8px rgba(0, 0, 0, 1);
-//     i {
-//       top: -10px;
-//     }
-//   }
-// }
-
 .toTop {
   position: fixed;
   bottom: 15px;
@@ -325,10 +313,10 @@ body {
   border-radius: 50%;
   z-index: 5;
   transition: all 0.2s ease-in-out;
-  background-color: #dfdfdfea;
+  background-color: rgba(245, 245, 245, 0.851);
   i {
     position: relative;
-    counter-reset: #ccc;
+    counter-reset: rgba(204, 204, 204, 0.701);
     font-size: 20px;
   }
 }

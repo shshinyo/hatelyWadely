@@ -8,20 +8,19 @@
   <!-- side nav -->
   <mat-sidenav
     #sidenav
-    [ngStyle.lt-lg]="{ 'width.px': 200, 'z-index': 15 }"
     position="start"
     role="navigation"
     class="mat-elevation-z10"
     dir="rtl"
   >
-    <mat-toolbar fxLayout="row" fxLayoutAlign="center center" class="mat-toolbar">
+    <!-- <mat-toolbar fxLayout="row" fxLayoutAlign="center center" class="mat-toolbar">
       <img src="../assets/images/logo3.jpg" alt="" />
     </mat-toolbar>
     <div class="line" fxLayout="row" fxLayout="center center">
       <div fxFlex="30" class="gray"></div>
       <div fxFlex class="orange"></div>
       <div fxFlex="30" class="gray"></div>
-    </div>
+    </div> -->
     <!-- side navbar list -->
     <side-nav (SidenavClose)="sidenav.close()"></side-nav>
   </mat-sidenav>

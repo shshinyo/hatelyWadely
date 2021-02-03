@@ -2,10 +2,21 @@
   <div class="bannerDiv" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center center">
     <h1 fxFlex="100">أفضل خدمات الشحن و الدليفرى</h1>
     <p fxFlex="100">شحن سريع وموثوق به من الطرود والمستندات في جميع أنحاء المركز</p>
-    <div fxLayout="row wrap" fxLayoutAlign="center center">
-      <button fxFlex.xs="100" mat-raised-button routerLink="/ourService">خدماتنا</button>
-      <button fxFlex.xs="100" mat-raised-button routerLink="/contacts/prices">
+    <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center center">
+      <button fxFlex.xs="40" mat-raised-button routerLink="/ourService">خدماتنا</button>
+      <button fxFlex.xs="40" mat-raised-button routerLink="/contacts/prices">
         قائمه الأسعار
+      </button>
+    </div>
+    <div
+      *ngIf="!isLoggedIn"
+      class="login"
+      fxFlex="100"
+      fxLayout="row wrap"
+      fxLayoutAlign="center center"
+    >
+      <button fxFlex.xs="90" mat-raised-button routerLink="/user/login">
+        تسجيل الدخول
       </button>
     </div>
   </div>

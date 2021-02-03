@@ -1,4 +1,5 @@
 import { Routes } from "@angular/router";
+import { AuthGuard } from "../Guards/auth-guard.guard";
 import { ContactsComponent } from "./contacts/contacts.component";
 import { OffersComponent } from "./offers/offers.component";
 import { OurServiceComponent } from "./our-service/our-service.component";
@@ -21,6 +22,7 @@ export const routes: Routes = [
       {
         path: "offers",
         component: OffersComponent,
+        canActivate: [AuthGuard],
         canDeactivate: ["canDeactivateRegister"],
       },
       {

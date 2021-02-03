@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup } from "@angular/forms";
 import { CdkDragDrop, moveItemInArray } from "@angular/cdk/drag-drop";
+import { Router } from "@angular/router";
+import { AuthService } from "src/app/services/auth.service";
 @Component({
   selector: "app-welcome-page",
   templateUrl: "./welcome-page.component.html",
@@ -22,7 +24,12 @@ export class WelcomePageComponent implements OnInit {
     { txt: "أدخل المعلومات الخاصة حول الشحنة الخاصة بك", num: "3" },
     { txt: "أدخل بيانات المرسل والمستقبل", num: "4" },
   ];
-  constructor() {}
+
+  // is logged in
+  get isLoggedIn() {
+    return this.authService.isLoggedIn;
+  }
+  constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit(): void {
     window.addEventListener("scroll", this.scroll.bind(this), true);
@@ -38,5 +45,6 @@ export class WelcomePageComponent implements OnInit {
     setTimeout(() => {
       $element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
     }, 100);
+    console.log($element);
   }
 }
