@@ -1,0 +1,64 @@
+<div fxLayout="row wrap" fxLayoutAlign="center center" dir="rtl">
+  <div class="banner" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center center">
+    <img src="../../../assets/images/ourServiceBabber.jpg" alt="" />
+  </div>
+
+  <div fxFlex="100" class="line" fxLayout="row" fxLayout="center center">
+    <div fxFlex="30" class="gray"></div>
+    <div fxFlex class="orange"></div>
+    <div fxFlex="30" class="gray"></div>
+  </div>
+
+  <mat-card class="service" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center start">
+    <h1 fxFlex="100">خدمتنا</h1>
+    <div class="par1" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center center">
+      <h3 fxFlex.lt-md="100" fxFlex="45">
+        كل اللي انت عايزه يجيلك وانت في مكانك <i class="fab fa-angellist fa-1x"></i>
+      </h3>
+      <p
+        [ngClass.gt-md]="'par1 pGtMid'"
+        [ngClass.md]="'par1 pGtMid'"
+        fxFlex.lt-md="95"
+        fxFlex="45"
+      >
+        كلمنا ندفعلك فواتير (التليفون - الموبايل - الانترنت - الكهرباء - المياه ....)
+        نتسوق لك ( خضار - فاكهة - اللحمة - الفراخ - السمك - السوبر ماركت ) من المكان اللى
+        انت بتثق فيه 😉. نوصلّك اماناتك وكل متعلقاتك منك وليك . نوصلّك الاكل اللى بتحبه من
+        المطعم اللى بتحبه برضو 😃 نوصلك الدواء لباب البيت. نحجزلك دورك عند الدكتور ونعرفك
+        تيجى امتى نجيبلك تليفونك اللى نسيته عند صاحبك وانتو بتتفرجوا عالماتش ✋ نحجزلك
+        تذاكر القطارات الأتوبيسات أو السينما . وكمان هنوصّل انتاج مشروعك اللى ف البيت لكل
+        عملائك لحد باب بيتهم في اي مكان في المركز . وكمان تقدر تتبع شحنتك اونلاين من خلال
+        👈 الاكونت بتاعك معانا وصلت لفين.
+      </p>
+    </div>
+    <div fxFlex="60" class="line" fxLayout="row" fxLayout="center center">
+      <div fxFlex="100" class="gray"></div>
+    </div>
+    <div class="par2" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="start start">
+      <h1 fxFlex="100"><i class="fas fa-cog fa-spin"></i> الدليفري :</h1>
+      <p fxFlex="100">
+        <span> &#11044; </span> الديليفري لجميع انواع الطلبات لحد باب البيت.
+      </p>
+    </div>
+    <div class="par2" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="start start">
+      <h1 fxFlex="100"><i class="fas fa-cog fa-spin"></i> الشحن الطلبات :</h1>
+      <p fxFlex="100">
+        <span> &#11044; </span>
+        الشحن من مركز كوم حمادة لجميع القري المجاورة والعكس في اسرع وقت
+        <mat-icon style="color: rgb(143, 85, 10)">watch</mat-icon>.
+      </p>
+    </div>
+    <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center center">
+      <button fxFlex.xs="100" mat-raised-button routerLink="/welcome">
+        العودة الي الرئيسية
+      </button>
+    </div>
+  </mat-card>
+  <div fxFlex="100" class="line" fxLayout="row" fxLayout="center center">
+    <div fxFlex="30" class="gray"></div>
+    <div fxFlex class="orange"></div>
+    <div fxFlex="30" class="gray"></div>
+  </div>
+  <!-- footer -->
+  <app-footer fxFlex="100"></app-footer>
+</div>

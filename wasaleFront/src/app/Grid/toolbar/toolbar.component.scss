@@ -1,0 +1,108 @@
+*:not(mat-icon) {
+  font-family: "serif" !important;
+}
+
+mat-toolbar {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  direction: rtl;
+}
+
+.activeLink {
+  border-bottom: 3.5px solid #ff4b4b;
+}
+
+.logo-container {
+  position: relative;
+  top: 20px;
+  .logo {
+    width: 100px;
+    height: 100px;
+    background-color: #dcdcdc;
+    border-radius: 50%;
+    border: 10px solid rgb(245 245 245);
+    outline: none;
+    z-index: 3;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 50%;
+    }
+  }
+}
+
+.register {
+  .login {
+    border: 2px solid #ff6e00;
+    color: #dc6206;
+    background-color: transparent;
+    font-size: large;
+  }
+  .login:hover {
+    background-color: #ff6e00;
+    color: #ffffff;
+  }
+  .user {
+    background-color: transparent;
+  }
+}
+
+.avatar {
+  background-color: transparent;
+}
+// @media (max-width: 425px) {
+//   .logo-container {
+//     position: relative;
+//     top: 0;
+//     .logo {
+//       width: 60px;
+//       height: 60px;
+//       background-color: #dcdcdc;
+//       border-radius: 50%;
+//       border: 5px solid rgb(245 245 245);
+//       z-index: 3;
+//       img {
+//         max-width: 100%;
+//         max-height: 100%;
+//         border-radius: 50%;
+//       }
+//     }
+//   }
+// }
+// // logo
+// .logo {
+//   position: relative;
+//   top: 30px;
+//   width: 80px;
+//   height: 80px;
+//   background-color: rgb(202, 202, 202);
+//   border-radius: 50%;
+//   border: 10px solid rgba(255, 255, 255, 0.816);
+//   margin-right: 30px;
+//   img {
+//     width: inherit;
+//     height: inherit;
+//     border-radius: 50%;
+//   }
+// }
+
+// @media (max-width: 959px) {
+//   mat-toolbar {
+//     border-radius: 0px;
+//   }
+//   .logo {
+//     position: relative;
+//     top: 20px;
+//     width: 70px;
+//     height: 70px;
+//     background-color: rgb(202, 202, 202);
+//     border-radius: 50%;
+//     border: 10px solid rgba(255, 255, 255, 0.816);
+//     margin-right: 30px;
+//     img {
+//       width: inherit;
+//       height: inherit;
+//     }
+//   }
+// }

@@ -1,0 +1,275 @@
+<div fxLayout="row wrap" fxLayoutAlign="center center" dir="rtl" #target>
+  <div class="bannerDiv" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center center">
+    <h1 fxFlex="100">أفضل خدمات الشحن و الدليفرى</h1>
+    <p fxFlex="100">شحن سريع وموثوق به من الطرود والمستندات في جميع أنحاء المركز</p>
+    <div fxLayout="row wrap" fxLayoutAlign="center center">
+      <button fxFlex.xs="100" mat-raised-button routerLink="/ourService">خدماتنا</button>
+      <button fxFlex.xs="100" mat-raised-button routerLink="/contacts/prices">
+        قائمه الأسعار
+      </button>
+    </div>
+  </div>
+
+  <div class="serviceDiv" fxFlex="90" fxLayout="row wrap" fxLayoutAlign="center center">
+    <a fxFlex="48" fxFlex.xs="100" fxLayout="row wrap" (click)="deliveryDec = true">
+      <div
+        class="button"
+        fxFlex="100"
+        fxFlex.xs="100"
+        fxLayout="row wrap"
+        fxLayoutAlign="center center"
+      >
+        <img
+          src="https://www.qi-post.com/assets/frontend/img/icons/fast-delivery.png"
+          alt=""
+        />
+        <p fxFlex="100">شحن الطلبات</p>
+      </div>
+    </a>
+    <a fxFlex="48" fxFlex.xs="100" fxLayout="row wrap" (click)="deliveryDec = false">
+      <div
+        class="button"
+        fxFlex="100"
+        fxFlex.xs="100"
+        fxLayout="row wrap"
+        fxLayoutAlign="center center"
+      >
+        <img
+          src="https://www.qi-post.com/assets/frontend/img/icons/world-shipping.png"
+          alt=""
+        />
+        <p fxFlex="100">الدليفرى</p>
+      </div>
+    </a>
+  </div>
+
+  <div
+    *ngIf="deliveryDec"
+    class="serviceDesc"
+    fxFlex="90"
+    fxLayout="row wrap"
+    fxLayoutAlign="start center"
+    dir="rtl"
+    data-aos="fade-left"
+    data-aos-once="true"
+  >
+    <h3 fxFlex="100">شحن الطلبات</h3>
+    <p fxFlex="100">الشحن من مركز كوم حمادة لجميع القري المجاورة والعكس في اسرع وقت.</p>
+    <div
+      fxFlex="100"
+      fxLayout="row wrap"
+      fxLayoutAlign="start center"
+      fxLayoutAlign.lt-sm="center center"
+      [ngStyle.gt-xs]="{ 'margin-right.px': 20 }"
+    >
+      <button
+        mat-raised-button
+        fxFlex.gt-lg="10"
+        fxFlex.gt-xs="15"
+        fxFlex.xs="80"
+        routerLink="/ourService"
+      >
+        اقرأ أكثر..
+      </button>
+    </div>
+  </div>
+  <div
+    *ngIf="!deliveryDec"
+    class="serviceDesc"
+    fxFlex="90"
+    fxLayout="row wrap"
+    fxLayoutAlign="start center"
+    dir="rtl"
+    data-aos="fade-left"
+    data-aos-once="true"
+  >
+    <h3 fxFlex="100">الدليفرى</h3>
+    <p fxFlex="100">الديليفري لجميع انواع الطلبات لحد باب البيت.</p>
+    <div
+      fxFlex="100"
+      fxLayout="row wrap"
+      fxLayoutAlign="start center"
+      fxLayoutAlign.lt-sm="center center"
+      [ngStyle.gt-xs]="{ 'margin-right.px': 20 }"
+    >
+      <button
+        mat-raised-button
+        fxFlex.gt-lg="10"
+        fxFlex.gt-xs="15"
+        fxFlex.xs="80"
+        routerLink="/ourService"
+      >
+        اقرأ أكثر..
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="sendService"
+    fxFlex="100"
+    fxLayout="row wrap"
+    fxLayoutAlign="center center"
+    dir="rtl"
+  >
+    <mat-card
+      data-aos="zoom-in-up"
+      data-aos-once="true"
+      class="banner"
+      fxFlex="70"
+      fxLayout="row wrap"
+      fxLayoutAlign="start center"
+    >
+      <h1 [ngStyle.lt-lg]="{ 'font-size': 'small' }" fxFlex="100">
+        توفير الوقت والمال مع هاتلي وديلي
+      </h1>
+      <p [ngStyle.lt-lg]="{ 'font-size': 'small' }" fxFlex="100">
+        وفر الوقت والمال مع خدمات هاتلي ووديلي من خلال الكثير من النقاط المنتشرة ف جميع
+        انحاء المركز، وبتأمين علي كافة الطرود والشحنات من التلف والضياع
+      </p>
+      <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center center">
+        <button
+          [ngStyle.lt-lg]="{ 'font-size': 'small', 'padding.px': 0 }"
+          fxFlex.xs="100"
+          mat-raised-button
+          routerLink="/soon"
+        >
+          إرسال طرد
+        </button>
+      </div>
+      <h2 [ngStyle.lt-lg]="{ 'font-size': 'small' }" fxFlex="100">
+        لارسال الشحنات الكبيرة والتي يتجاوز حجمها 20 كيلو جرام واكثر يرجي
+        <strong style="color: #ff6e00" routerLink="/contacts">الاتصال بنا</strong>
+      </h2>
+    </mat-card>
+  </div>
+
+  <div class="onlineOrder" fxFlex="70" fxLayout="row wrap" fxLayoutAlign="center center">
+    <h3 fxFlex="100">طلب عبر الإنترنت (هذة الخدمة ستتوفر قريبا بالمركز).</h3>
+    <div
+      fxFlex="100"
+      cdkDropList
+      class="example-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div class="example-box" *ngFor="let action of actions" cdkDrag>
+        <p>{{ action.txt }}</p>
+        <mat-icon>looks_{{ action.num }}</mat-icon>
+      </div>
+    </div>
+  </div>
+
+  <div fxFlex="100" class="line" fxLayout="row" fxLayout="center center">
+    <div fxFlex="30" class="gray"></div>
+    <div fxFlex class="orange"></div>
+    <div fxFlex="30" class="gray"></div>
+  </div>
+
+  <div
+    class="whyChooseUsDiv"
+    fxFlex="100"
+    fxLayout="row wrap"
+    fxLayoutAlign="center start"
+  >
+    <h1 fxFlex="100" data-aos="zoom-in" data-aos-once="true">لماذا أخترتنا</h1>
+    <p fxFlex="100">نوفر لك واحده من أامن وأنسب خدمات الشحن من وإلى مركز كوم حمادة</p>
+    <div fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="100">
+      <div
+        class="advantageDiv"
+        [ngClass.xs]="'advantageDivXs'"
+        fxFlex.sm="45"
+        fxFlex.xs="90"
+        fxFlex.md="20"
+        fxFlex.lg="25"
+        fxFlex.xl="30"
+        fxLayout="row wrap"
+        fxLayoutAlign="center center"
+      >
+        <img
+          src="https://www.qi-post.com/assets/frontend/img/icons/low-cost.png"
+          alt=""
+        />
+        <h3 fxFlex="100">تكلفة منخفضة</h3>
+        <p fxFlex="100">يمكنك ارسال الطرود والبضائع بأسعار تنافسية.</p>
+      </div>
+      <div
+        class="advantageDiv"
+        [ngClass.xs]="'advantageDivXs'"
+        fxFlex.sm="45"
+        fxFlex.xs="90"
+        fxFlex.md="20"
+        fxFlex.lg="25"
+        fxFlex.xl="30"
+        fxLayout="row wrap"
+        fxLayoutAlign="center center"
+      >
+        <img
+          src="https://www.qi-post.com/assets/frontend/img/icons/fast-delivery.png"
+          alt=""
+        />
+        <h3 fxFlex="100">توصيل سريع</h3>
+        <p fxFlex="100">هاتلى ووديلى تقدم لعملائها خدمة سريعة وجوده ممتازه</p>
+      </div>
+      <div
+        class="advantageDiv"
+        [ngClass.xs]="'advantageDivXs'"
+        fxFlex.sm="45"
+        fxFlex.xs="90"
+        fxFlex.md="20"
+        fxFlex.lg="25"
+        fxFlex.xl="30"
+        fxLayout="row wrap"
+        fxLayoutAlign="center center"
+      >
+        <img
+          src="https://www.qi-post.com/assets/frontend/img/icons/trackable.png"
+          alt=""
+        />
+        <h3 fxFlex="100">تتبعها</h3>
+        <p fxFlex="100">
+          من خلال موقعنا يمكنك تتبع حالة الشحنة على طول الطريق الى حين وصولها الى الوجهة
+          المطلوبة.
+        </p>
+      </div>
+      <div
+        class="advantageDiv"
+        [ngClass.xs]="'advantageDivXs'"
+        fxFlex.sm="45"
+        fxFlex.xs="90"
+        fxFlex.md="20"
+        fxFlex.lg="25"
+        fxFlex.xl="30"
+        fxLayout="row wrap"
+        fxLayoutAlign="center center"
+      >
+        <img
+          src="https://www.qi-post.com/assets/frontend/img/icons/reliable-secure.png"
+          alt=""
+        />
+        <h3 fxFlex="100">آمنة وموثوق بها</h3>
+        <p fxFlex="100">
+          أمن وموثوقية توفرها شركتنا من خلال الضمانات لزبائنها الكرام لحين استلام الشحنة.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div fxFlex="100" class="line" fxLayout="row" fxLayout="center center">
+    <div fxFlex="30" class="gray"></div>
+    <div fxFlex class="orange"></div>
+    <div fxFlex="30" class="gray"></div>
+  </div>
+  <!--
+ -->
+  <div
+    *ngIf="toTopShow"
+    fxHide.lt-md
+    class="toTop"
+    fxFlex="100"
+    fxLayout="row wrap"
+    fxLayoutAlign="center center"
+    (click)="scrollToElement(target)"
+  >
+    <i inline="true" class="fas fa-chevron-up"></i>
+  </div>
+  <!-- footer -->
+  <app-footer fxFlex="100"></app-footer>
+</div>

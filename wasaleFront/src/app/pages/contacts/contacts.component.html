@@ -1,0 +1,97 @@
+<div class="main" fxLayout="row wrap" fxLayoutAlign="center center" dir="rtl">
+  <div class="banner" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center center">
+    <img src="../../../assets/images/contactBanner.jpg" alt="" />
+  </div>
+  <div
+    fxFlex="100"
+    class="line"
+    fxLayout="row"
+    fxLayout="center center"
+    style="margin-bottom: 15px"
+  >
+    <div fxFlex="30" class="gray"></div>
+    <div fxFlex class="orange"></div>
+    <div fxFlex="30" class="gray"></div>
+  </div>
+  <div class="contacts" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center center">
+    <h1 fxFlex="100">{{ text.hed }}</h1>
+    <div class="phone" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center center">
+      <h2 fxFlex="45" data-aos="fade-left" data-aos-once="true">
+        يمكنك الاتصال علي الارقام الاتية <i class="fas fa-mobile-alt"></i>
+      </h2>
+      <div
+        class="number"
+        fxFlex="45"
+        fxLayout="row wrap"
+        fxLayoutAlign="center center"
+        data-aos="fade-right"
+        data-aos-once="true"
+      >
+        <a fxFlex="100" href="tel:+201030038605">01030038605</a>
+        <a fxFlex="100" href="tel:+201063201017">01063201017</a>
+        <a fxFlex="100" href="tel:+201204484386">01204484386</a>
+      </div>
+    </div>
+    <div fxFlex="30" class="line" fxLayout="row" fxLayout="center center">
+      <div fxFlex="100" class="gray"></div>
+    </div>
+    <div class="social" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center center">
+      <div class="icons" fxFlex="60" fxLayout="row" fxLayoutAlign="center start">
+        <a
+          fxFlex="10"
+          href="https://www.facebook.com/wadilyKomHamada/?view_public_for=100931745289342"
+          target="_blank"
+        >
+          <i class="fab fa-facebook-square fa-3x" style="color: rgb(49, 49, 255)"></i>
+        </a>
+        <a fxFlex="10" href="https://twitter.com/hatlywwadely?s=08" target="_blank">
+          <i class="fab fa-twitter-square fa-3x" style="color: rgb(63, 159, 255)"></i>
+        </a>
+        <a fxFlex="10" href="https://wa.me/+201063201017" target="_blank">
+          <i class="fab fa-whatsapp-square fa-3x" style="color: rgb(0, 189, 0)"></i>
+        </a>
+        <a
+          fxFlex="10"
+          href="https://www.instagram.com/hatly_9_wadily?r=nametag"
+          target="_blank"
+        >
+          <i
+            class="fab fa-instagram fa-3x"
+            style="
+              color: radial-gradient(
+                circle at 30% 107%,
+                #fdf497 0%,
+                #fdf497 15%,
+                #fd5949 45%,
+                #d6249f 60%,
+                #285aeb 20%
+              );
+            "
+          ></i>
+        </a>
+        <a fxFlex="10" href="hatlywwadely@gmail.com" target="_blank">
+          <i class="fab fa-google-plus-g fa-3x" style="color: rgb(255, 64, 64)"></i>
+        </a>
+      </div>
+    </div>
+    <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center center">
+      <button fxFlex.xs="85" mat-raised-button routerLink="/welcome">
+        العودة الي الرئيسية
+      </button>
+    </div>
+  </div>
+  <div
+    fxFlex="100"
+    class="line"
+    fxLayout="row"
+    fxLayout="center center"
+    style="margin: 15px 0"
+  >
+    <div fxFlex="30" class="gray"></div>
+    <div fxFlex class="orange"></div>
+    <div fxFlex="30" class="gray"></div>
+  </div>
+
+  <!-- footer -->
+  <app-footer fxFlex="100"></app-footer>
+</div>

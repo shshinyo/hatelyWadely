@@ -1,0 +1,23 @@
+*:not(mat-icon) {
+  font-family: "serif" !important;
+}
+mat-nav-list {
+  background-color: whitesmoke;
+  height: 100%;
+}
+a {
+  text-decoration: none;
+  color: white;
+  border-left: 3px solid #ff6f00;
+  margin: 5px auto;
+
+  mat-icon {
+    margin: 0 20px;
+    color: #ff6f00;
+  }
+}
+
+a:hover,
+a:active {
+  color: lightgray;
+}

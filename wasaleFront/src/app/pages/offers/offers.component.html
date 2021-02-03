@@ -1,0 +1,159 @@
+<div fxLayout="row wrap" fxLayoutAlign="center center" dir="rtl">
+  <div class="video" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center center">
+    <video fxFlex.xs="100" controls [autoplay]="play">
+      <source src="../../../assets/video/Media.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <div fxFlex="100" class="line" fxLayout="row" fxLayout="center center">
+    <div fxFlex="30" class="gray"></div>
+    <div fxFlex class="orange"></div>
+    <div fxFlex="30" class="gray"></div>
+  </div>
+  <div
+    
+    class="paragraph"
+    fxFlex="100"
+    fxLayout="row wrap"
+    fxLayoutAlign="center start"
+  >
+    <h1 fxFlex="100">أهلا بيك</h1>
+    <div
+      class="points"
+      fxFlex="100"
+      fxFlex.sm="95"
+      fxFlex.xs="85"
+      fxLayout="row wrap"
+      fxLayoutAlign="center start"
+    >
+      <p fxFlex="100">
+        لو أنت صاحب محل أو صاحب مطعم أو عندك سوبر ماركت أو أي
+        <span>نشاط تجاري</span> هاتلي ووديلي هتزود مبيعاتك وهتوصلك بالزباين بأسرع وقت.
+      </p>
+      <p fxFlex="100">
+        اما بقا لو أنت <span>مشتري</span> فأنت تقدر تشتري كل اللي نفسك فيه في أي
+        <span>وقت<mat-icon style="color: rgb(143, 85, 10)">watch</mat-icon> </span> وأي
+
+        <span
+          >مكان
+          <mat-icon style="color: rgb(206, 49, 49)">not_listed_location</mat-icon></span
+        >. وكمان تقدر تبعت <span>أي حاجة لأي حد في أي مكان</span> في أسرع وقت
+        <mat-icon style="color: #d3752d">local_shipping</mat-icon>
+      </p>
+      <p fxFlex="100">
+        <span fxFlex="100" style="color: rgb(28, 28, 61)"
+          >سجل الان للحصول علي عرض التوصيل
+          <span class="firstFree">اول مرة مجاني</span>
+        </span>
+      </p>
+    </div>
+    <div class="register" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center center">
+      <button fxFlex.xs="100" mat-raised-button (click)="scrollToElement(target)">
+        سجل الان للحصول علي العرض
+      </button>
+    </div>
+  </div>
+  <div fxFlex="100" class="line" fxLayout="row" fxLayout="center center">
+    <div fxFlex="30" class="gray"></div>
+    <div fxFlex class="orange"></div>
+    <div fxFlex="30" class="gray"></div>
+  </div>
+  <!-- form -->
+  <div
+    *ngIf="register"
+    class="registerForm"
+    fxFlex="100"
+    fxLayout="row wrap"
+    fxLayoutAlign="center start"
+  >
+    <mat-card fxFlex="95" fxLayout="column" fxFlexAlign="center center">
+      <form
+        [formGroup]="newClient"
+        (ngSubmit)="postNew(newClient.value)"
+        inline="true"
+        dir="rtl"
+        novalidate
+        fxLayout="column"
+        fxLayoutAlign="space-around center"
+      >
+        <mat-form-field fxFill class="form-field" appearance="outline">
+          <mat-label>الاســم</mat-label>
+          <input formControlName="name" matInput placeholder="الاســم  ثلاثــي" />
+          <mat-icon matSuffix>account_circle</mat-icon>
+          <mat-error *ngIf="newClient.get('name').invalid">{{ nameError }}</mat-error>
+        </mat-form-field>
+        <mat-form-field fxFill class="form-field" appearance="outline">
+          <mat-label>الهاتف المحمول</mat-label>
+          <input formControlName="phone" matInput type="tel" placeholder="أدخل 11 رقم" />
+          <mat-icon matSuffix>mode_edit</mat-icon>
+          <mat-error *ngIf="newClient.get('phone').invalid">{{ phoneError }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field fxFill class="form-field" appearance="outline">
+          <mat-label>المدينــــة</mat-label>
+          <input
+            formControlName="address"
+            matInput
+            placeholder=" المحافظة - المدينة - عنوانك"
+          />
+          <mat-icon matSuffix>location_on</mat-icon>
+          <mat-error *ngIf="newClient.get('address').hasError('required')"
+            >من فضلك أدخل محــل السكن</mat-error
+          >
+        </mat-form-field>
+
+        <div
+          class="buttons"
+          fxLayout="row"
+          fxFlexAlign="center center"
+          fxLayoutGap="20px"
+        >
+          <button
+            [disabled]="newClient.invalid"
+            type="submit"
+            mat-flat-button
+            class="button-valid"
+          >
+            <span style="font-size: 20px; color: white; font-family: 'JalalLight'"
+              >تسجيـــل
+            </span>
+          </button>
+          <button (click)="cancel()" type="button" mat-stroked-button>
+            <span style="font-size: 20px; color: rgb(0, 0, 0); font-family: 'JalalLight'"
+              >إلغــاء
+            </span>
+          </button>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+
+  <div fxFlex="100" #target style="height: 50px"></div>
+  <div
+    class="copy"
+    fxFlex="100"
+    fxLayout="row wrap"
+    fxLayoutAlign="center center"
+    dir="rtl"
+  >
+    <p fxFlex="30" fxFlex.xs="45">
+      حقوق الملكية &copy; 2021 لدي <strong>(هاتلي وديلي)</strong>
+    </p>
+    <div class="div"></div>
+    <p fxFlex="30" fxFlex.xs="45"><i class="fas fa-mug-hot"></i> Beta version</p>
+    <div fxHide.lt-sm class="div"></div>
+    <!-- <a fxFlex="10" fxFlex.xs="45" fxFlex.sm="30" href="#">الشروط والاحكام</a>
+    <div class="div"></div>
+
+    <a fxFlex="10" fxFlex.xs="45" fxFlex.sm="30" href="#">سياسة الخصوصية</a>
+    <div class="div"></div>
+
+    <a fxFlex="10" fxFlex.xs="45" fxFlex.sm="30" href="#">بيانات الشركة</a>
+    <div class="div"></div>
+
+    <a fxFlex="10" fxFlex.xs="45" fxFlex.sm="30" href="#">سياسة ملفات الارتباط</a>
+    <div class="div"></div> -->
+    <p class="developers" fxFlex="30" fxFlex.xs="45">
+      <i class="fad fa-hands-heart"></i> Made By Hatly Wadely Team
+    </p>
+  </div>
+</div>

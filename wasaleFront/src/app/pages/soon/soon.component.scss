@@ -1,0 +1,43 @@
+* {
+  font-family: "serif" !important;
+  background-color: white;
+}
+.container{
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+.banner {
+  height: 100%;
+  img {
+    max-height: 400px;
+    max-width: 350px;
+  }
+  h2 {
+    text-align: center;
+    color: #dc6206;
+  }
+  button {
+    background-color: #dc6206;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    font-family: "serif";
+    padding: 15px;
+    width: 200px;
+    margin: 0 10px 10px 10px;
+    transition: all 0.1s ease-in-out;
+  }
+
+  button:hover {
+    background-color: transparent;
+    color: #dc6206;
+    border: 5px solid #ff6e00;
+    font-size: large;
+    font-weight: bold;
+    font-family: "serif";
+    padding: 15px;
+    width: 200px;
+    margin: 0 10px 10px 10px;
+  }
+}

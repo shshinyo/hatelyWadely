@@ -1,0 +1,134 @@
+*:not(i, mat-icon) {
+  font-family: "serif" !important;
+}
+.line {
+  margin: 20px 20px;
+  display: inline;
+  .gray {
+    height: 0.5px;
+    background-color: rgb(179, 176, 176);
+    border-radius: 30px;
+  }
+  .orange {
+    height: 2.5px;
+    background-color: #ff6e00;
+  }
+}
+
+.banner {
+  max-height: 400px;
+  background-color: white;
+
+  img {
+    height: 400px;
+    max-width: 100%;
+  }
+}
+
+.service {
+  min-height: 300px;
+  background-color: #e4e4e4;
+  border: 1px solid #d1d1d1;
+  font-family: "serif" !important;
+  h1 {
+    text-align: center;
+    color: #ff6e00;
+    font-size: 45px;
+  }
+  .par1 {
+    h3 {
+      text-align: center;
+    }
+    .pGtMid {
+      border-right: 2px solid #ff6e00;
+      padding: 0 10px;
+      font-size: 18px;
+    }
+  }
+
+  .par2 {
+    min-height: 120px;
+    h1 {
+      margin: 0 20px;
+      text-align: start;
+      font-size: 25px;
+      i {
+        font-size: 15px;
+      }
+    }
+    p {
+      margin: 0 100px;
+      font-size: 20px;
+    }
+    span {
+      font-size: 10px;
+    }
+  }
+}
+
+button {
+  background-color: #dc6206;
+  color: white;
+  font-size: large;
+  font-weight: bold;
+  font-family: "serif";
+  padding: 15px;
+  width: 200px;
+  margin: 0 10px 10px 10px;
+  transition: all 0.1s ease-in-out;
+}
+
+button:hover {
+  background-color: transparent;
+  color: #dc6206;
+  border: 5px solid #ff6e00;
+  font-size: large;
+  font-weight: bold;
+  font-family: "serif";
+  padding: 15px;
+  width: 200px;
+  margin: 0 10px 10px 10px;
+}
+
+@media (max-width: 768px) {
+  .service {
+    min-height: 300px;
+    background-color: #e4e4e4;
+    border: 1px solid #d1d1d1;
+    font-family: "serif" !important;
+    h1 {
+      text-align: center;
+      color: #ff6e00;
+      font-size: 45px;
+    }
+    .par1 {
+      h3 {
+        text-align: center;
+      }
+      .pGtMid {
+        border-right: 2px solid #ff6e00;
+        padding: 0 10px;
+        font-size: 18px;
+      }
+    }
+
+    .par2 {
+      min-height: 120px;
+      h1 {
+        margin: 0 20px;
+        text-align: start;
+        font-size: 20px;
+        i {
+          font-size: 12px;
+        }
+      }
+      p {
+        margin: 0 40px;
+        font-size: 15px;
+      }
+      span {
+        font-size: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,174 @@
+<mat-toolbar fxFlex fxLayout="row" fxLayoutAlign="space-between center">
+  <div
+    class="logo-container"
+    fxFlex="15"
+    fxFlex.md="30"
+    fxFlex.lt-md="20"
+    fxFlex.sm="20"
+    fxFlex.lt-sm="35"
+    fxLayout="row wrap"
+    fxLayoutAlign="center center"
+  >
+    <div
+      class="logo"
+      fxLayout="row wrap"
+      fxLayoutAlign="center center"
+      routerLink="/welcome"
+    >
+      <img fxFlex inline="true" src="../../../assets/images/Logo.png" />
+    </div>
+  </div>
+
+  <div fxLayout="row wrap" fxLayoutAlign="center center">
+    <nav
+      fxFlex="100"
+      fxLayout="row"
+      fxLayoutAlign="center center"
+      mat-tab-nav-bar
+      fxLayout="row"
+      fxShow.xl
+      fxShow.lt-xl
+      fxHide.sm
+      fxHide.lt-sm
+      [color]="background"
+    >
+      <a
+        mat-tab-link
+        style="padding: 33px 0 30px 0; font-size: larger; font-family: 'serif'"
+        *ngFor="let link of links"
+        routerLinkActive="activeLink"
+        routerLink="{{ link.location }}"
+        [disabled]="link.disabled"
+      >
+        <mat-icon style="margin-left: 10px; color: #ff6e00">{{ link.icon }}</mat-icon>
+        {{ link.name }}
+      </a>
+    </nav>
+  </div>
+
+  <div
+    class="register"
+    fxLayout="row wrap"
+    fxLayoutAlign="center center"
+    fxFlex="15"
+    fxFlex.md="30"
+    fxFlex.lt-md="20"
+    fxFlex.sm="20"
+    fxFlex.lt-sm="35"
+    fxShow.xl
+    fxShow.lt-xl
+    fxHide.sm
+    fxHide.lt-sm
+  >
+    <!--  -->
+    <!--  -->
+    <button *ngIf="!loggedIn" class="login" mat-flat-button routerLink="/user/login">
+      تسجيل الدخول
+      <mat-icon style="margin: 0 5px">touch_app</mat-icon>
+    </button>
+
+    <!--  -->
+
+    <button class="avatar" *ngIf="loggedIn" mat-flat-button [matMenuTriggerFor]="menu">
+      {{ userName }}
+      <p-avatar
+        icon="pi pi-user"
+        styleClass="p-mr-2"
+        [style]="{
+          'background-color': '#ff6e00',
+          color: '#ffffff',
+          margin: '0px 10px'
+        }"
+        size="large"
+        shape="circle"
+      ></p-avatar>
+    </button>
+    <!--  -->
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item fxFlex fxLayout="row " fxLayoutAlign="center center">
+        <span fxFlex="80">تعديل الملف</span>
+        <mat-icon fxFlex="10">settings</mat-icon>
+      </button>
+      <button
+        mat-menu-item
+        fxFlex
+        fxLayout="row "
+        fxLayoutAlign="center center"
+        (click)="logOut()"
+      >
+        <span fxFlex="80">تسجيل الخروج</span>
+        <mat-icon fxFlex="10">logout</mat-icon>
+      </button>
+    </mat-menu>
+  </div>
+  <!--  -->
+  <!--  -->
+  <div fxHide.xl fxHide.lt-xl fxShow.sm fxShow.lt-sm>
+    <button
+      style="outline: none; margin-right: 10px; margin-left: 10px"
+      mat-icon-button
+      (click)="onToggleSidenav()"
+    >
+      <mat-icon inline="true" style="font-size: 40px; color: #ff6e00">menu</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+
+<!--
+  <mat-toolbar fxFlex fxLayout="row" fxLayoutAlign="space-between center">
+  <div class="logo">
+
+    <img inline="true" src="../../../assets/images/3699591.jpg" />
+  </div>
+  <nav
+    fxFlexAlign="center"
+    mat-tab-nav-bar
+    fxLayout="row"
+    fxFlexAlign="center"
+    fxShow.xl
+    fxShow.lt-xl
+    fxHide.sm
+    fxHide.lt-sm
+    [color]="background"
+  >
+    <a
+      mat-tab-link
+      style="padding: 33px 0 30px 0; font-size: larger; font-family: 'serif'"
+      *ngFor="let link of links"
+      routerLinkActive="activeLink"
+      routerLink="{{ link.location }}"
+      [disabled]="link.disabled"
+    >
+      <mat-icon style="margin-left: 10px; color: #ff6e00">{{ link.icon }}</mat-icon>
+      {{ link.name }}
+    </a>
+  </nav>
+
+  <div fxHide.lt-sm style="margin-left: 25px">
+    <button
+      mat-raised-button
+      routerLink="/user/login"
+      type="button"
+      color="accent"
+      style="
+        background-color: #ff4b4b;
+        height: 40px;
+        text-decoration: underline;
+        font-size: larger;
+      "
+    >
+      أعضـاء الهيئــة<mat-icon style="margin-right: 5px">touch_app</mat-icon>
+    </button>
+  </div>
+
+  <div fxHide.xl fxHide.lt-xl fxShow.sm fxShow.lt-sm>
+    <button
+      style="outline: none; margin-right: 10px; margin-left: 10px"
+      mat-icon-button
+      (click)="onToggleSidenav()"
+    >
+      <mat-icon inline="true" style="font-size: 40px; color: #ff6e00">menu</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+ -->
