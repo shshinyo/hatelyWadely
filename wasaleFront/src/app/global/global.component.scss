@@ -1,0 +1,223 @@
+// ورب الكعبة ال هيقرب من الفيل دا ... ✊✊✊
+*:not(i, mat-icon, .floating-container, .floating-social-visible, .toggle-social) {
+  background-color: white;
+}
+
+mat-sidenav-container,
+mat-sidenav-content {
+  height: 100%;
+}
+
+.container {
+  height: calc(100% - 60px) !important;
+}
+//  toolbar
+app-toolbar {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  z-index: 3;
+}
+main {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  // overflow: auto;
+}
+@font-face {
+  font-family: "serif";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../assets/fonts/jzoor/JF-Flat-regular.ttf"); /* IE9 Compat Modes */
+}
+
+@font-face {
+  font-family: "JalalLight";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../assets/fonts/jalal/JalalLTLight.otf");
+}
+
+.line {
+  width: 100%;
+  display: inline;
+  .gray {
+    height: 1.5px;
+    background-color: rgb(179, 176, 176);
+    border-radius: 30px;
+  }
+  .orange {
+    height: 1.5px;
+    background-color: #ff6e00;
+  }
+}
+// main content
+
+// spinner
+.spinner {
+  position: absolute;
+  z-index: 50;
+  margin: 250px 50% 300px 50%;
+}
+
+mat-sidenav {
+  position: absolute;
+  top: 0;
+  background-color: #f1f1f1;
+  // mat-toolbar {
+  //   height: 60px;
+  //   width: 100%;
+  //   background-color: white;
+  //   img {
+  //     width: 80px;
+  //     height: 60px;
+  //   }
+  // }
+  side-nav {
+    height: 100%;
+  }
+}
+
+.floating-container {
+  position: fixed;
+  top: 30%;
+  left: 5px;
+  width: 40px;
+  min-height: 200px;
+  z-index: 4;
+  background-color: transparent;
+  transition: all 0.5s ease-in-out;
+  .floating-social-visible {
+    position: relative;
+    transition: all 0.5s ease-in-out;
+    left: 0;
+    .icon {
+      height: 40px;
+      margin: 3px 0;
+      font-size: 20px;
+      border-radius: 50%;
+      text-decoration: none;
+      opacity: 0.8;
+      transition: all 0.5s ease-in-out;
+      i {
+        color: white;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+    .icon:hover {
+      transform: rotateY(359deg);
+      opacity: 1;
+    }
+  }
+
+  .floating-social-hide {
+    position: relative;
+    top: 30%;
+    left: -60px;
+    transition: all 0.5s ease-in-out;
+
+    .icon {
+      height: 40px;
+      margin: 3px 0;
+      font-size: 20px;
+      border-radius: 50%;
+      text-decoration: none;
+      opacity: 0.8;
+      transition: all 0.5s ease-in-out;
+      i {
+        color: white;
+      }
+    }
+    .icon:hover {
+      transform: rotateY(359deg);
+      opacity: 1;
+    }
+  }
+  .toggleFloatingSocial {
+    position: relative;
+    height: 40px;
+    border-radius: 50%;
+    z-index: 4;
+    background-color: transparent;
+    transition: all 0.1s ease-in-out;
+    opacity: 0.3;
+    .toggle-social {
+      height: 30px;
+      // margin-top: 5px;
+      font-size: 15px;
+      color: gray;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      cursor: pointer;
+    }
+  }
+  .toggleFloatingSocial:hover {
+    opacity: 1;
+  }
+}
+
+// three dots animation
+.global-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1999;
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.global-loader-fade-in {
+  opacity: 0;
+}
+
+.global-loader-hidden {
+  display: none;
+}
+
+.global-loader p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: normal;
+  font-size: 24px;
+  letter-spacing: 0.04rem;
+  white-space: pre;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: repeating-linear-gradient(
+    to right,
+    #f44336,
+    #9c27b0,
+    #3f51b5,
+    #03a9f4,
+    #009688,
+    #8bc34a,
+    #ffeb3b,
+    #ff9800
+  );
+  background-size: 750% auto;
+  background-position: 0 100%;
+  animation: gradient 18s infinite;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: -750% 0;
+  }
+}

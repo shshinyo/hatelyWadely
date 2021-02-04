@@ -5,15 +5,14 @@ import { AppRoutingModule } from "./app-routing.module";
 import { HttpClientModule } from "@angular/common/http";
 import { AppComponent } from "./app.component";
 
-import { ToolbarComponent } from "./Grid/toolbar/toolbar.component";
-import { SideNavComponent } from "./Grid/side-nav/side-nav.component";
 import { SharedModule } from "./shared/shared.module";
 import { PagesModule } from "./pages/pages.module";
 import { DashboardModule } from "./dashboard/dashboard.module";
 import { UserModule } from "./user/user.module";
+import { GlobalModule } from "./global/global.module";
 
 @NgModule({
-  declarations: [AppComponent, ToolbarComponent, SideNavComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -23,6 +22,7 @@ import { UserModule } from "./user/user.module";
     PagesModule,
     DashboardModule,
     UserModule,
+    GlobalModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

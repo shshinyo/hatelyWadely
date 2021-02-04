@@ -1,10 +1,17 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
+import { GlobalComponent } from "./global/global.component";
 
 const routes: Routes = [
   {
     path: "",
-    loadChildren: () => import("./pages/pages.module").then((m) => m.PagesModule),
+    component: GlobalComponent,
+    children: [
+      {
+        path: "",
+        loadChildren: () => import("./pages/pages.module").then((m) => m.PagesModule),
+      },
+    ],
   },
   {
     path: "dashboard",

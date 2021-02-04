@@ -1,12 +1,10 @@
-import { ThrowStmt } from "@angular/compiler";
 import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 import { ThemePalette } from "@angular/material/core";
 import { Router } from "@angular/router";
-import { retry } from "rxjs/Operators";
 import { AuthService } from "src/app/services/auth.service";
 
 @Component({
-  selector: "app-toolbar",
+  selector: "toolbar-dash",
   templateUrl: "./toolbar.component.html",
   styleUrls: ["./toolbar.component.scss"],
 })

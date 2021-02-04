@@ -26,6 +26,8 @@
     "angular2-image-upload": "^1.0.0-rc.2",
     "crypto-js": "^4.0.0",
     "hammerjs": "^2.0.8",
+    "highcharts": "^9.0.0",
+    "highcharts-angular": "^2.9.0",
     "html-escape-unescape": "^1.0.3",
     "icomoon-build": "^0.2.8",
     "js2xmlparser": "^4.0.1",

@@ -3,7 +3,7 @@ import { Router } from "@angular/router";
 import { AuthService } from "src/app/services/auth.service";
 
 @Component({
-  selector: "side-nav",
+  selector: "side-dash",
   templateUrl: "./side-nav.component.html",
   styleUrls: ["./side-nav.component.scss"],
 })

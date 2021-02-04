@@ -52,18 +52,20 @@ body {
       font-size: large;
       font-weight: bold;
       font-family: "serif";
-      padding: 10px;
-      width: 300px;
-      margin: 0 10px 10px 10px;
+      padding: 5px 10px;
+      width: 325px;
       transition: all 0.3s ease-in-out;
     }
     button:hover {
-      background-color: #dc6206;
+      background-image: linear-gradient(to right, #ff512f 0%, #f09819 51%, #ff512f 100%);
+      background-size: 200% auto;
+      background-position: right center;
+      border: none;
       color: #fff;
       font-size: 24px;
       font-weight: bold;
       font-family: "serif";
-      padding: 15px;
+      padding: 10px 15px;
       width: 350px;
     }
   }
