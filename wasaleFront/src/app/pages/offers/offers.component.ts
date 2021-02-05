@@ -46,12 +46,11 @@ export class OffersComponent implements OnInit {
   allUsers$ = this.userService.getUsers$;
   // scroll to an element
   scrollToElement($element): void {
-    this.userService
-      .getUsers$()
+    this.userService.getUsers$
       .pipe(map((users) => this.uniqueUsers(users)))
       .subscribe((users) => {
         this.users = users;
-        // console.log(users);
+        console.log(users);
       });
     setTimeout(() => {
       $element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });

@@ -9,6 +9,18 @@ mat-toolbar {
   direction: rtl;
 }
 
+.setting {
+  margin: 0 10px;
+  button {
+    outline: none;
+    margin: 0 10px;
+  }
+  mat-icon {
+    font-size: 40px;
+    color: #ff6e00;
+  }
+}
+
 .activeLink {
   border-bottom: 3.5px solid #ff4b4b;
 }
@@ -71,8 +83,7 @@ mat-toolbar {
 .toggleButton {
   button {
     outline: none;
-    margin-right: 10px;
-    margin-left: 10px;
+    margin: 0 10px;
   }
   mat-icon {
     font-size: 40px;

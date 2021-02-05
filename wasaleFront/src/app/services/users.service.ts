@@ -9,10 +9,10 @@ export class UsersService {
   constructor(private http: HttpClient) {}
   private getUsersUrl = `${environment.api_url}api/users/getUsers`;
 
-  // getUsers$ = this.http.get<User[]>(this.getUsersUrl);
-  getUsers$() {
-    return this.http.get<User[]>(`${environment.api_url}api/users/getUsers`);
-  }
+  getUsers$ = this.http.get<User[]>(this.getUsersUrl);
+  // getUsers$() {
+  //   return this.http.get<User[]>(`${environment.api_url}api/users/getUsers`);
+  // }
 
   createUser(user) {
     return this.http.post<User>(`${environment.api_url}api/users/newUser`, user);

@@ -1,7 +1,6 @@
 <mat-nav-list fxLayout="row wrap" fxLayoutAlign="center start">
   <!-- in the future make it photo and clickable button -->
   <div
-    *ngIf="loggedIn"
     class="profile-container"
     fxFlex="100"
     fxLayout="row wrap"
@@ -10,21 +9,11 @@
     <div class="photo" fxLayout="row wrap" fxLayoutAlign="center center">
       <mat-icon inline="true">account_circle</mat-icon>
     </div>
-    <h4 fxFlex="100"><span>مرحبا</span>{{ userName }}</h4>
+    <h4 fxFlex="100"><span>Welcome</span> {{ userName }}Mohamed</h4>
+    <p>Mohamed.eleib5@gmail.com</p>
+    <p>Jop : Developer</p>
   </div>
-  <!--  -->
-  <!-- animation if not logged yet -->
-  <div
-    *ngIf="!loggedIn"
-    class="notLoggedYet"
-    fxFlex="100"
-    fxLayout="row wrap"
-    fxLayoutAlign="center center"
-  >
-    <span>هاتلي</span>
-    <img fxFlex="30" src="../../../assets/images/loginBanner.gif" title="هاتلي و وديلي" />
-    <span>وديلي</span>
-  </div>
+  <hr fxFlex="100" />
   <!--  -->
   <a
     class="link"
@@ -32,7 +21,6 @@
     fxFlex="100"
     *ngFor="let link of links"
     routerLink="{{ link.location }}"
-    (click)="onSidenavClose()"
   >
     <mat-icon>{{ link.icon }}</mat-icon>
     <span class="nav-caption">{{ link.disc }}</span>

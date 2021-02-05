@@ -8,10 +8,13 @@ import { ToastrModule } from "ngx-toastr";
 import { AngularSvgIconModule } from "angular-svg-icon";
 
 import { MaterialModule } from "./material.module";
+import { HighchartsChartModule } from "highcharts-angular";
 import { FooterComponent } from "../Grid/footer/footer.component";
+import { CardComponent } from "./widget/card/card.component";
+import { PieComponent } from "./widget/pie/pie.component";
 
 const LOCAL_COMPONENTS = [];
-const SHARED_COMPONENTS = [FooterComponent];
+const SHARED_COMPONENTS = [FooterComponent, CardComponent, PieComponent];
 
 const LOCAL_DIRECTIVES = [];
 
@@ -20,6 +23,7 @@ const SHARED_DIRECTIVES = [];
 const THIRD_MODULES = [
   MaterialModule,
   FlexLayoutModule,
+  HighchartsChartModule,
   ToastrModule.forRoot({
     timeOut: 4000,
     positionClass: "toast-top-left",

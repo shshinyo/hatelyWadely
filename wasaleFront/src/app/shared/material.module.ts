@@ -47,6 +47,7 @@ import { DragDropModule } from "@angular/cdk/drag-drop";
 // primeNG
 import { AvatarModule } from "primeng/avatar";
 import { AvatarGroupModule } from "primeng/avatargroup";
+import { TableModule } from "primeng/table";
 
 @NgModule({
   declarations: [],
@@ -91,6 +92,7 @@ import { AvatarGroupModule } from "primeng/avatargroup";
     MatNativeDateModule,
     AvatarModule,
     AvatarGroupModule,
+    TableModule,
   ],
   exports: [
     MatAutocompleteModule,
@@ -132,6 +134,7 @@ import { AvatarGroupModule } from "primeng/avatargroup";
     DragDropModule,
     AvatarModule,
     AvatarGroupModule,
+    TableModule,
   ],
 })
 export class MaterialModule {}
