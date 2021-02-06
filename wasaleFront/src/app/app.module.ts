@@ -10,9 +10,10 @@ import { PagesModule } from "./pages/pages.module";
 import { DashboardModule } from "./dashboard/dashboard.module";
 import { UserModule } from "./user/user.module";
 import { GlobalModule } from "./global/global.module";
+import { Dashboard404 } from "./Error404/dashboard.component";
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, Dashboard404],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

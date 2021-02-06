@@ -12,21 +12,23 @@ import { AuthService } from "../services/auth.service";
 @Injectable({
   providedIn: "root",
 })
-export class AuthGuard implements CanActivate {
+export class AdminGuard implements CanActivate {
   constructor(private router: Router, private authService: AuthService) {}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return this.checkLoggedIn(state.url);
+    return this.isAdmin();
   }
 
-  checkLoggedIn(url: string) {
-    if (this.authService.isLoggedIn) {
-      return true;
+  isAdmin() {
+    if (this.authService.currentUser) {
+      if (this.authService.currentUser.role === 1) {
+        return true;
+      }
+      // this.router.navigateByUrl("notfound");
+      return false;
     }
-    this.authService.redirectUrl = url;
-    this.router.navigate(["/user/login"]);
     return false;
   }
 }

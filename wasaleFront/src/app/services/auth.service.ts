@@ -25,15 +25,26 @@ export class AuthService {
     if (user) {
       this.currentUser = {
         id: user.id,
+        role: user.role,
         name: user.name,
         phone: user.phone,
         location: user.location,
         email: user.email,
         password: user.password,
       };
+
+      if (this.isLoggedIn) {
+        if (user.role === 1) {
+          console.log("admin");
+          this.router.navigateByUrl("/dashboard");
+        } else {
+          this.router.navigateByUrl("/welcome");
+          console.log("not admin");
+        }
+      }
       this.toastr.success("تم تسجيل الدخول بنجاح");
       this.errorMessageSubject.next("");
-      console.log(this.isLoggedIn);
+      // console.log(this.isLoggedIn);
     } else {
       this.currentUser = null;
       this.errorMessageSubject.next("البريد الذي ادخلته او كلمة المرور غير صحيحة.");
@@ -53,15 +64,17 @@ export const localUsers: newUser[] = [
     phone: "01098799837",
     location: "كوم حمادة",
     email: "mohamed.eldeib5@gmail.com",
-    password: "hamo2222002",
+    password: "hamo222",
+    role: 1,
   },
   {
     id: 2,
     name: "eldeeb",
     phone: "01098799837",
     location: "كوم حمادة",
-    email: "moahmned.eldeeb@gmail.com",
-    password: "hamo012548",
+    email: "mohamed.eldeeb@gmail.com",
+    password: "hamo012",
+    role: 0,
   },
   {
     id: 3,
@@ -70,5 +83,6 @@ export const localUsers: newUser[] = [
     location: "كوم حمادة",
     email: "moahmned.eldeiib@gmail.com",
     password: "hamo012548",
+    role: 0,
   },
 ];

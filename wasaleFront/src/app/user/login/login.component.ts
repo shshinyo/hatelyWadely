@@ -98,11 +98,13 @@ export class LoginComponent implements OnInit {
   login(authForm): void {
     if (authForm && authForm.valid) {
       this.authService.login(authForm.value.email, authForm.value.password);
+
       if (this.authService.redirectUrl) {
         this.router.navigateByUrl(this.authService.redirectUrl);
-      } else {
-        this.router.navigateByUrl("/welcome");
       }
+      // else {
+      //   this.router.navigateByUrl("/welcome");
+      // }
     }
   }
 

@@ -9,4 +9,5 @@ export interface newUser extends loginUser {
   phone?: string;
   location?: string;
   confirmPassword?: string;
+  role?: number;
 }

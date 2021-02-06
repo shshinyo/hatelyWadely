@@ -1,6 +1,9 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
+import { Dashboard404 } from "./Error404/dashboard.component";
+
 import { GlobalComponent } from "./global/global.component";
+import { AdminGuard } from "./Guards/admin.guard";
 
 const routes: Routes = [
   {
@@ -11,16 +14,21 @@ const routes: Routes = [
         path: "",
         loadChildren: () => import("./pages/pages.module").then((m) => m.PagesModule),
       },
+      {
+        path: "user",
+        loadChildren: () => import("./user/user.module").then((m) => m.UserModule),
+      },
     ],
   },
   {
     path: "dashboard",
     loadChildren: () =>
       import("./dashboard/dashboard.module").then((m) => m.DashboardModule),
+    canActivate: [AdminGuard],
   },
   {
-    path: "user",
-    loadChildren: () => import("./user/user.module").then((m) => m.UserModule),
+    path: "notfound",
+    component: Dashboard404,
   },
   {
     path: "",
@@ -29,7 +37,7 @@ const routes: Routes = [
   },
   {
     path: "**",
-    redirectTo: "",
+    redirectTo: "notfound",
   },
 ];
 
