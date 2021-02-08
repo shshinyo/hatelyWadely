@@ -18,6 +18,10 @@ const routes: Routes = [
         path: "user",
         loadChildren: () => import("./user/user.module").then((m) => m.UserModule),
       },
+      {
+        path: "notfound",
+        component: Dashboard404,
+      },
     ],
   },
   {
@@ -26,19 +30,19 @@ const routes: Routes = [
       import("./dashboard/dashboard.module").then((m) => m.DashboardModule),
     canActivate: [AdminGuard],
   },
-  {
-    path: "notfound",
-    component: Dashboard404,
-  },
+  // {
+  //   path: "notfound",
+  //   component: Dashboard404,
+  // },
   {
     path: "",
     redirectTo: "",
     pathMatch: "full",
   },
-  {
-    path: "**",
-    redirectTo: "notfound",
-  },
+  // {
+  //   path: "**",
+  //   redirectTo: "notfound",
+  // },
 ];
 
 @NgModule({
