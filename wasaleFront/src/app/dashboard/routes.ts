@@ -10,11 +10,6 @@ export const routes: Routes = [
     children: [
       {
         path: "",
-        redirectTo: "",
-        pathMatch: "full",
-      },
-      {
-        path: "",
         component: DefaultComponent,
       },
       {

@@ -8,6 +8,11 @@ import { AdminGuard } from "./Guards/admin.guard";
 const routes: Routes = [
   {
     path: "",
+    redirectTo: "",
+    pathMatch: "full",
+  },
+  {
+    path: "",
     component: GlobalComponent,
     children: [
       {
@@ -30,19 +35,19 @@ const routes: Routes = [
       import("./dashboard/dashboard.module").then((m) => m.DashboardModule),
     canActivate: [AdminGuard],
   },
-  // {
-  //   path: "notfound",
-  //   component: Dashboard404,
-  // },
   {
-    path: "",
-    redirectTo: "",
-    pathMatch: "full",
+    path: "notfound",
+    component: Dashboard404,
   },
   // {
-  //   path: "**",
-  //   redirectTo: "notfound",
+  //   path: "",
+  //   redirectTo: "",
+  //   pathMatch: "full",
   // },
+  {
+    path: "**",
+    redirectTo: "notfound",
+  },
 ];
 
 @NgModule({

@@ -6,12 +6,12 @@
     fxLayout="row wrap"
     fxLayoutAlign="center center"
   >
-    <div class="photo" fxLayout="row wrap" fxLayoutAlign="center center">
+    <div class="photo" fxLayout="row wrap" fxLayoutAlign="center center" [ngSwitch]="">
       <mat-icon inline="true">account_circle</mat-icon>
     </div>
-    <h4 fxFlex="100"><span>Welcome</span> {{ userName }}</h4>
-    <p>Mohamed.eleib5@gmail.com</p>
-    <p>Jop : Developer</p>
+    <h4 fxFlex="100"><span>Welcome</span> {{ user.name }}</h4>
+    <p>{{ user.email }}</p>
+    <p>Jop : Admin</p>
   </div>
   <hr fxFlex="100" />
   <!--  -->

@@ -12,16 +12,16 @@ mat-nav-list {
   min-height: 200px;
   padding-top: 20px;
   .photo {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     border: 2px solid #ff6f00;
     background-color: rgb(225, 225, 225);
     text-align: center;
     mat-icon {
-      height: 200px;
-      width: 200px;
-      font-size: 200px;
+      height: 150px;
+      width: 150px;
+      font-size: 150px;
       color: #8f8f8f;
     }
   }
@@ -56,6 +56,7 @@ mat-nav-list {
 
 .link:hover,
 .link:active {
+  cursor: pointer;
   color: #ff6f00;
   .nav-caption {
     color: #ff6f00;
@@ -79,6 +80,7 @@ mat-nav-list {
 
 .logOut:hover,
 .logOut:active {
+  cursor: pointer;
   color: #ff6f00;
   .nav-caption {
     color: #ff6f00;
