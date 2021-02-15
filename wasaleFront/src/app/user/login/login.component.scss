@@ -10,7 +10,7 @@
 }
 
 .logo {
-  height: 150px;
+  height: inherit;
   img {
     max-height: 250px;
     max-width: 250px;
@@ -108,4 +108,9 @@ form {
 ::ng-deep .mat-checkbox-indeterminate .mat-checkbox-background {
   // color: rgba(28,190,204,0.8) !important;
   background-color: #374b73 !important;
+}
+
+::ng-deep .mat-tab-label {
+  font-size: 22px;
+  font-family: "serif" !important;
 }
