@@ -7,6 +7,7 @@ import {
   Router,
 } from "@angular/router";
 import { Observable } from "rxjs";
+import { newUser } from "../Interfaces/authUser";
 import { AuthService } from "../services/auth.service";
 
 @Injectable({
@@ -22,13 +23,14 @@ export class AdminGuard implements CanActivate {
   }
 
   isAdmin() {
-    if (this.authService.currentUser) {
-      if (this.authService.currentUser.role === 1) {
+    if (this.authService.isLoggedIn) {
+      const user = window.localStorage.getItem("user");
+      const x: newUser = JSON.parse(user);
+      if (x.role === 1) {
         return true;
       }
-      this.router.navigateByUrl("notfound");
-      return false;
     }
+    this.router.navigateByUrl("notfound");
     return false;
   }
 }

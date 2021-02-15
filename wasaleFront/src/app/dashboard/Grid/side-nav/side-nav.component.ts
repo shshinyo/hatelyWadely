@@ -16,10 +16,12 @@ export class SideNavComponent implements OnInit {
   }
   // get user name for avatar
   get user(): newUser {
-    if (this.authService.currentUser) {
-      return this.authService.currentUser;
+    if (this.authService.isLoggedIn) {
+      const user = window.localStorage.getItem("user");
+      const x = JSON.parse(user);
+      return x;
     }
-    return ;
+    return;
   }
 
   links = [

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 import { Router } from "@angular/router";
+import { newUser } from "src/app/Interfaces/authUser";
 import { AuthService } from "src/app/services/auth.service";
 
 @Component({
@@ -15,8 +16,10 @@ export class SideNavComponent implements OnInit {
   }
   // get user name for avatar
   get userName(): string {
-    if (this.authService.currentUser) {
-      return this.authService.currentUser.name;
+    if (this.authService.isLoggedIn) {
+      const user = window.localStorage.getItem("user");
+      const name: newUser = JSON.parse(user);
+      return name.name;
     }
     return "";
   }
