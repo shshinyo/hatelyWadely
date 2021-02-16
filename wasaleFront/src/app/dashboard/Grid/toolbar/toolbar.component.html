@@ -8,11 +8,10 @@
         </a>
         <mat-menu #menu="matMenu">
           <mat-form-field appearance="outline" dir="ltr">
-            <mat-label>Choose an option</mat-label>
-            <mat-select>
-              <mat-option value="ar">العربية</mat-option>
+            <mat-label>{{ "choose a language" | translate }}</mat-label>
+            <mat-select [(value)]="lang" (selectionChange)="changeLang($event.value)">
               <mat-option value="en">English</mat-option>
-              <mat-option value="def">Default</mat-option>
+              <mat-option value="ar">العربية</mat-option>
             </mat-select>
           </mat-form-field>
           <button

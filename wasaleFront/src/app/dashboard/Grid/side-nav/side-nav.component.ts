@@ -26,7 +26,7 @@ export class SideNavComponent implements OnInit {
 
   links = [
     {
-      disc: "Home",
+      disc: "home",
       icon: "home",
       location: "/dashboard",
     },

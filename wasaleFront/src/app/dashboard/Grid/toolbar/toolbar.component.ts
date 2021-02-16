@@ -10,6 +10,9 @@ import { AuthService } from "src/app/services/auth.service";
 })
 export class ToolbarComponent implements OnInit {
   @Output() sidenavToggle = new EventEmitter();
+  // Language changes
+  lang;
+
   sideOpen = true;
   links = [
     {
@@ -59,7 +62,15 @@ export class ToolbarComponent implements OnInit {
     console.log(this.loggedIn);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.lang = window.localStorage.getItem("lang") || "en";
+  }
+
+  changeLang(lang): void {
+    // console.log(lang);
+    window.localStorage.setItem("lang", lang);
+    window.location.reload();
+  }
 
   onToggleSidenav(): void {
     this.sidenavToggle.emit();
