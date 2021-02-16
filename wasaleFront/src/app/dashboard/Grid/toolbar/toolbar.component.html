@@ -1,23 +1,36 @@
 <mat-toolbar fxFlex fxLayout="row" fxLayoutAlign="space-around center">
   <!--  -->
-  <div class="setting">
-    <button mat-icon-button [matMenuTriggerFor]="menu">
-      <mat-icon>settings</mat-icon>
-    </button>
+  <div class="nav-list">
+    <ul>
+      <li>
+        <a [matMenuTriggerFor]="menu">
+          <mat-icon style="font-size: 40px; color: #ff6e00">settings</mat-icon>
+        </a>
+        <mat-menu #menu="matMenu">
+          <mat-form-field appearance="outline" dir="ltr">
+            <mat-label>Choose an option</mat-label>
+            <mat-select>
+              <mat-option value="ar">العربية</mat-option>
+              <mat-option value="en">English</mat-option>
+              <mat-option value="def">Default</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button
+            mat-menu-item
+            fxFlex
+            fxLayout="row "
+            fxLayoutAlign="center center"
+            (click)="logOut()"
+          >
+            <mat-icon fxFlex="10">logout</mat-icon>
+            <span fxFlex="80">Logout</span>
+          </button>
+        </mat-menu>
+      </li>
+      <li></li>
+    </ul>
   </div>
-  <!--  -->
-  <mat-menu #menu="matMenu">
-    <button
-      mat-menu-item
-      fxFlex
-      fxLayout="row "
-      fxLayoutAlign="center center"
-      (click)="logOut()"
-    >
-      <mat-icon fxFlex="10">logout</mat-icon>
-      <span fxFlex="80">Logout</span>
-    </button>
-  </mat-menu>
+
   <!-- Title  -->
   <div class="title" fxFlex fxLayout="row" fxLayoutAlign="center center">
     <p>هاتلي</p>
