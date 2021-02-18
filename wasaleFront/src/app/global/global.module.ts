@@ -10,9 +10,17 @@ import { routes } from "./global.routes";
 import { GlobalComponent } from "./global.component";
 import { ToolbarComponent } from "../Grid/toolbar/toolbar.component";
 import { SideNavComponent } from "../Grid/side-nav/side-nav.component";
+import { SymbolNamePipe } from "../Grid/toolbar/symbol-name.pipe";
+import { CasedNamePipe } from "../Grid/toolbar/cased-name.pipe";
 
 @NgModule({
-  declarations: [GlobalComponent, ToolbarComponent, SideNavComponent],
+  declarations: [
+    GlobalComponent,
+    ToolbarComponent,
+    SideNavComponent,
+    SymbolNamePipe,
+    CasedNamePipe,
+  ],
   imports: [
     CommonModule,
     RouterModule,

@@ -50,7 +50,8 @@ export class ToolbarComponent implements OnInit {
   get loggedIn(): boolean {
     return this.authService.isLoggedIn;
   }
-  // get user name for avatar
+
+  // get user name
   get userName(): string {
     if (this.authService.isLoggedIn) {
       const user = window.localStorage.getItem("user");
@@ -59,6 +60,7 @@ export class ToolbarComponent implements OnInit {
     }
     return "";
   }
+
   // account_circle
   constructor(private router: Router, private authService: AuthService) {
     console.log(this.loggedIn);
