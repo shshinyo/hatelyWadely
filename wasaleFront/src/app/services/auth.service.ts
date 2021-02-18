@@ -73,7 +73,7 @@ export const localUsers: newUser[] = [
   },
   {
     id: 2,
-    name: "mohamed",
+    name: "mohamed ",
     phone: "01098799837",
     location: "كوم حمادة",
     email: "mohamed.eldeeb@gmail.com",
@@ -82,7 +82,7 @@ export const localUsers: newUser[] = [
   },
   {
     id: 3,
-    name: "soso",
+    name: "soso mostafa karem",
     phone: "01098799837",
     location: "كوم حمادة",
     email: "moahmned.eldeiib@gmail.com",
