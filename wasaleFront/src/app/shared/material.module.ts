@@ -50,7 +50,6 @@ import { AvatarGroupModule } from "primeng/avatargroup";
 import { TableModule } from "primeng/table";
 
 @NgModule({
-  declarations: [],
   imports: [
     CommonModule,
     MatAutocompleteModule,

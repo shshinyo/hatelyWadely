@@ -11,6 +11,10 @@ body {
   padding: 0;
   height: 100%;
 }
+html:lang(ar)* {
+  text-align: right;
+}
+
 .hidden {
   display: none !important;
 }

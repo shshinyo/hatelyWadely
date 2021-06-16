@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, OnDestroy, OnInit } from "@angular/core";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: "app-root",
@@ -6,7 +7,12 @@ import { AfterViewInit, Component, OnDestroy, OnInit } from "@angular/core";
   styleUrls: ["./app.component.scss"],
 })
 export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
-  constructor() {}
+  constructor(private translateService: TranslateService) {
+    this.translateService.setDefaultLang("en");
+    const lang = localStorage.getItem("lang") || "en";
+    this.translateService.use(lang);
+    document.documentElement.lang = lang;
+  }
 
   ngOnInit(): void {}
 

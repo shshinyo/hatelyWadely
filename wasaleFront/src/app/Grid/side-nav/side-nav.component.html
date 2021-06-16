@@ -10,7 +10,10 @@
     <div class="photo" fxLayout="row wrap" fxLayoutAlign="center center">
       <mat-icon inline="true">account_circle</mat-icon>
     </div>
-    <h4 fxFlex="100"><span>مرحبا</span>{{ userName }}</h4>
+    <h4 fxFlex="100">
+      <span>{{ "welcome" | translate }}</span>
+      {{ userName | casedName }}
+    </h4>
   </div>
   <!--  -->
   <!-- animation if not logged yet -->

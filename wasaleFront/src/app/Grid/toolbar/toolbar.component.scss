@@ -1,4 +1,4 @@
-*:not(mat-icon) {
+*:not(mat-icon, .avatar) {
   font-family: "serif" !important;
 }
 
@@ -53,6 +53,7 @@ mat-toolbar {
 
 .avatar {
   background-color: transparent;
+  font-size: 16px;
 }
 
 .title {

@@ -9,62 +9,16 @@ mat-toolbar {
   direction: rtl;
 }
 
-.setting {
-  margin: 0 10px;
-  button {
-    outline: none;
-    margin: 0 10px;
+.nav-list {
+  ul {
+    list-style-type: none;
   }
-  mat-icon {
-    font-size: 40px;
-    color: #ff6e00;
+  li {
   }
-}
 
-.activeLink {
-  border-bottom: 3.5px solid #ff4b4b;
-}
-
-.logo-container {
-  position: relative;
-  top: 20px;
-  .logo {
-    width: 100px;
-    height: 100px;
-    background-color: #dcdcdc;
-    border-radius: 50%;
-    border: 10px solid rgb(245 245 245);
-    outline: none;
-    z-index: 3;
-    img {
-      max-width: 100%;
-      max-height: 100%;
-      border-radius: 50%;
-    }
-  }
-  .logo:hover {
+  a:hover {
     cursor: pointer;
   }
-}
-
-.register {
-  .login {
-    border: 2px solid #ff6e00;
-    color: #dc6206;
-    background-color: transparent;
-    font-size: large;
-  }
-  .login:hover {
-    background-color: #ff6e00;
-    color: #ffffff;
-  }
-  .user {
-    background-color: transparent;
-  }
-}
-
-.avatar {
-  background-color: transparent;
 }
 
 .title {
@@ -75,7 +29,7 @@ mat-toolbar {
   span {
     color: #ff6e00;
     font-size: 30px;
-    margin: 0 5px;
+    margin: 0 8px;
     text-align: center;
   }
 }
@@ -88,29 +42,5 @@ mat-toolbar {
   mat-icon {
     font-size: 40px;
     color: #ff6e00;
-  }
-}
-
-@media (max-width: 959px) {
-  .logo-container {
-    position: relative;
-    top: 0;
-    .logo {
-      width: 60px;
-      height: 60px;
-      background-color: #dcdcdc;
-      border-radius: 50%;
-      border: 5px solid rgb(245 245 245);
-      outline: none;
-      z-index: 3;
-      img {
-        max-width: 100%;
-        max-height: 100%;
-        border-radius: 50%;
-      }
-    }
-    .logo:hover {
-      cursor: pointer;
-    }
   }
 }

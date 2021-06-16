@@ -15,7 +15,8 @@ export class AuthService {
   errorMessage$ = this.errorMessageSubject.asObservable();
 
   get isLoggedIn(): boolean {
-    return !!this.currentUser;
+    return !!window.localStorage.getItem("user");
+    // return !!this.currentUser;
   }
   constructor(private router: Router, private toastr: ToastrService) {}
 
@@ -32,7 +33,8 @@ export class AuthService {
         email: user.email,
         password: user.password,
       };
-
+      // store the user in localStorage
+      window.localStorage.setItem("user", JSON.stringify(user));
       if (this.isLoggedIn) {
         if (user.role === 1) {
           console.log("admin");
@@ -45,6 +47,7 @@ export class AuthService {
       this.toastr.success("تم تسجيل الدخول بنجاح");
       this.errorMessageSubject.next("");
       // console.log(this.isLoggedIn);
+      console.log(this.currentUser);
     } else {
       this.currentUser = null;
       this.errorMessageSubject.next("البريد الذي ادخلته او كلمة المرور غير صحيحة.");
@@ -54,6 +57,7 @@ export class AuthService {
 
   logOut(): void {
     this.currentUser = null;
+    window.localStorage.removeItem("user");
   }
 }
 
@@ -69,7 +73,7 @@ export const localUsers: newUser[] = [
   },
   {
     id: 2,
-    name: "eldeeb",
+    name: "mohamed ",
     phone: "01098799837",
     location: "كوم حمادة",
     email: "mohamed.eldeeb@gmail.com",
@@ -78,7 +82,7 @@ export const localUsers: newUser[] = [
   },
   {
     id: 3,
-    name: "soso",
+    name: "soso mostafa karem",
     phone: "01098799837",
     location: "كوم حمادة",
     email: "moahmned.eldeiib@gmail.com",
