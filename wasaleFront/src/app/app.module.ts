@@ -11,6 +11,8 @@ import { DashboardModule } from "./dashboard/dashboard.module";
 import { UserModule } from "./user/user.module";
 import { GlobalModule } from "./global/global.module";
 import { Dashboard404 } from "./Error404/dashboard.component";
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent, Dashboard404],
@@ -24,6 +26,7 @@ import { Dashboard404 } from "./Error404/dashboard.component";
     DashboardModule,
     UserModule,
     GlobalModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent],
