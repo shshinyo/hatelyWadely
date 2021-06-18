@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 style="background-color: antiquewhite; margin-top: 15px; border-radius: 10px;">Here Our Products of Type : {{listFilter}}</h2>
+    </div>
+    <div class="col-md-4">
+      <form class="form-control">
+        <label for="name">filter your Products</label>
+        <input class="form-control" type="text" name="filter your Products" [(ngModel)]="listFilter" >
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="kitchenHead">
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let product of filteredProducts" >
+      <h2 class="picsTitle">{{product.title}}</h2>
+     <img class="KitchenImg" *ngIf="product?.imgUrl" src="{{product.imgUrl}}">
+     <button id="kichenBtn"class="btn btn-primary"  *ngIf="router.url == '/products/tv'" [routerLink]="['/products/tv',product.id]">
+      {{product.button}}</button>
+      <button id="kichenBtn"class="btn btn-primary"  *ngIf="router.url == '/products/kitchen'" [routerLink]="['/products/kitchen',product.id]">
+        {{product.button}}</button>
+        <button id="kichenBtn"class="btn btn-primary" *ngIf="router.url == '/products/mobile'" [routerLink]="['/products/mobile',product.id]">
+          {{product.button}}</button>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
+<router-outlet></router-outlet>
