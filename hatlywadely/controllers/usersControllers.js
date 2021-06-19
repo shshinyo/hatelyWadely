@@ -15,9 +15,17 @@ async function createuser(req,res){
        }
    })
 }
-async function getUsers(req,res){
-   let users = await User.find({})
-   res.json(users);
+async function getUsers(req, res) {
+    // const USER = require('./models/userModel');
+
+  let user =   await new User({
+        name: 'rehab',
+        address: 'bagour',
+        phone: '01067390401',
+        userType: 'user'
+    })
+    let users = await User.find({})
+    res.json(user);
 }
 
 module.exports ={

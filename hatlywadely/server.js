@@ -11,7 +11,7 @@ const app = express();
 app.use(cors({ origin: "*" }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname,'dist/front')));
-mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true}).
+mongoose.connect(process.env.MONGODB_URI_LOCAL, {useNewUrlParser: true, useUnifiedTopology: true}).
 catch(error => handleError(error));
 ;
 
