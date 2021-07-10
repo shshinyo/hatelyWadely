@@ -9,6 +9,7 @@
   "jsxBracketSameLine": false,
   "printWidth": 90,
   "proseWrap": "preserve",
+  "quoteProps": "consistent",
   "insertPragma": false,
   "requirePragma": false,
   "semi": true,
