@@ -74,3 +74,12 @@ $config: mat.define-typography-config();
 // that you are using.
 
 @include mat.all-component-themes($theme);
+
+
+.material-icons {
+  font-size: 24px;
+  font-family: 'Material Icons Round', 'Material Icons';
+  .mat-badge-content {
+    font-family: 'Roboto';
+  }
+}

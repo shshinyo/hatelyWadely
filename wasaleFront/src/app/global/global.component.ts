@@ -1,8 +1,6 @@
 import {
-  AfterViewInit,
   Component,
   HostListener,
-  OnDestroy,
   OnInit,
   ViewChild,
 } from "@angular/core";
@@ -15,7 +13,6 @@ import {
   Router,
 } from "@angular/router";
 import { Subscription } from "rxjs";
-import { filter } from "rxjs/Operators";
 
 @Component({
   selector: "app-global",
@@ -37,11 +34,6 @@ export class GlobalComponent implements OnInit {
 
   ngOnInit(): void {
     this.getSreenSize();
-    // Scroll to Top when router finished
-    this.subscription = this.router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe(() => this.content.scrollTo({ top: 0 }));
-
     // lazyLoading Router
     this.router.events.subscribe((e) => {
       if (e instanceof NavigationStart) {
