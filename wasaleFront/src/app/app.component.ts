@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, OnDestroy, OnInit } from "@angular/core";
+import { NavigationEnd, Router } from "@angular/router";
 import { TranslateService } from "@ngx-translate/core";
 
 @Component({
@@ -7,33 +8,38 @@ import { TranslateService } from "@ngx-translate/core";
   styleUrls: ["./app.component.scss"],
 })
 export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
-  constructor(private translateService: TranslateService) {
+  constructor(private _router:Router,private translateService: TranslateService) {
     this.translateService.setDefaultLang("en");
     const lang = localStorage.getItem("lang") || "en";
     this.translateService.use(lang);
     document.documentElement.lang = lang;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this._router.events.subscribe((event)=>{
+      if (!(event instanceof NavigationEnd )){
+        return;
+      }
+      window.scroll(0 ,0);
+    })
+  }
 
   ngOnDestroy(): void {}
 
   // //preload Three-dots
   ngAfterViewInit(): void {
-    this.hidePreloader();
+    this._hidePreloader();
   }
 
-  private hidePreloader(): void {
+  private _hidePreloader(): void {
     const el = document.getElementById("globalLoader");
     if (el) {
       el.addEventListener("transitionend", () => {
-        setTimeout(() => {
-          el.className = "global-loader-hidden";
-        }, 200);
+        el.style.display = "none";
       });
 
       if (!el.className.includes("global-loader-hidden")) {
-        el.className += " global-loader-fade-in";
+        el.style.display = "none";
       }
     }
   }
