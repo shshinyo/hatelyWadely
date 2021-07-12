@@ -1,7 +1,7 @@
 import { map, find, findIndex } from 'rxjs/Operators';
 import { Router } from '@angular/router';
 import { filter } from 'rxjs/Operators';
-import { SouqService } from '../../../services/souq.service';
+import { SouqService } from '../../../shared/services/souq.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 

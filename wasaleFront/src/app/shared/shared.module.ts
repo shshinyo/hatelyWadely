@@ -14,9 +14,10 @@ import { CardComponent } from "./widget/card/card.component";
 import { PieComponent } from "./widget/pie/pie.component";
 import { HttpClientModule } from "@angular/common/http";
 import { PrimeNgModule } from "./primeng.module";
+import { ConfirmDialogComponent } from "./components/confirm-dialog.component";
 
 const LOCAL_COMPONENTS = [];
-const SHARED_COMPONENTS = [FooterComponent, CardComponent, PieComponent];
+const SHARED_COMPONENTS = [FooterComponent, ConfirmDialogComponent, CardComponent, PieComponent];
 
 const LOCAL_DIRECTIVES = [];
 

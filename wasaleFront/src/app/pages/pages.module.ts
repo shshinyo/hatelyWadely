@@ -31,17 +31,17 @@ import { ContactsComponent } from "./contacts/contacts.component";
     }),
   ],
   providers: [
-    {
-      provide: "canDeactivateRegister",
-      useValue: checkDirtyState,
-    },
+    // {
+    //   provide: "canDeactivateRegister",
+    //   useValue: checkDirtyState,
+    // },
   ],
 })
 export class PagesModule {}
 
-export function checkDirtyState(component: OffersComponent) {
-  if (component.isDirty) {
-    return window.confirm("هل انت متأكد من عدم التسجيــل ؟؟");
-  }
-  return true;
-}
+// export function checkDirtyState(component: OffersComponent) {
+//   if (component.isDirty) {
+//     return window.confirm("هل انت متأكد من عدم التسجيــل ؟؟");
+//   }
+//   return true;
+// }

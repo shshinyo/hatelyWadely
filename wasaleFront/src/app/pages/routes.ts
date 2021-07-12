@@ -24,7 +24,7 @@ export const routes: Routes = [
         path: "offers",
         component: OffersComponent,
         // canActivate: [AuthGuard],
-        canDeactivate: ["canDeactivateRegister"],
+        // canDeactivate: ["canDeactivateRegister"],
       },
       {
         path: "soon",

@@ -10,7 +10,7 @@ import {   distinctUntilChanged,
   share,
   throttleTime, } from "rxjs/Operators";
 import { newUser } from "src/app/Interfaces/authUser";
-import { AuthService } from "src/app/services/auth.service";
+import { AuthService } from "src/app/shared/services/auth.service";
 
 enum VisibilityState {
   Visible = 'visible',

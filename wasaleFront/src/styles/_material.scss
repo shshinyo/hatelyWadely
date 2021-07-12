@@ -83,3 +83,12 @@ $config: mat.define-typography-config();
     font-family: 'Roboto';
   }
 }
+
+//snake bare
+.snack-success{
+  background: rgba(27, 172, 27, 0.661);
+}
+
+.snack-error{
+  background-color: red;
+}

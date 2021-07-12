@@ -1,7 +1,7 @@
 import { find } from "rxjs/Operators";
 import { ActivatedRoute } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
-import { SouqService } from "src/app/services/souq.service";
+import { SouqService } from "src/app/shared/services/souq.service";
 
 @Component({
   selector: "app-cart",

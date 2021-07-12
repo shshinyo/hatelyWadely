@@ -17,9 +17,10 @@ import {
 } from "@angular/forms";
 import { Router } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
-import { distinct, map, tap } from "rxjs/Operators";
+import { distinct, filter, map, tap } from "rxjs/Operators";
 import { User } from "src/app/Interfaces/interfaces.interface";
-import { UsersService } from "src/app/services/users.service";
+import { ModalService } from "src/app/shared/services/modal.service";
+import { UsersService } from "src/app/shared/services/users.service";
 @Component({
   selector: "app-offers",
   templateUrl: "./offers.component.html",
@@ -65,10 +66,11 @@ export class OffersComponent implements OnInit {
     this.winWidth >= 1000 ? (this.play = true) : (this.play = false);
   }
   constructor(
-    private fb: FormBuilder,
+    private _fb: FormBuilder,
+    private _router: Router,
     private userService: UsersService,
     private toastr: ToastrService,
-    private router: Router
+    private _modal: ModalService
   ) {
     this._newClient();
     this.getScreenSize();
@@ -77,15 +79,11 @@ export class OffersComponent implements OnInit {
   ngOnInit(): void {}
 
   cancel(): void {
-    this.toastr.warning(
-      "سيتم تحويلك الان علي الصفحة الرئيسية",
-      " سعداء لزيارتك لنا نأمل بالتسجيل معنا ف وقت لاحق "
-    );
-    this.newClient.reset();
-    this.isDirty = false;
-    setTimeout(() => {
-      this.router.navigate(["/welcome"]);
-    }, 2000);
+    this._modal.confirmDialog("هل أنت متأكد من إلغاء العملية ؟!").pipe(filter((confirm) => !!confirm)).subscribe(() => {
+      this._modal.snackbar("تم إلغاء العملية بنجاح", "success")
+      this._router.navigateByUrl("/welcome")
+    });
+
   }
 
   postNew(client: User): void {
@@ -99,7 +97,7 @@ export class OffersComponent implements OnInit {
         this.registered = true;
         this.isDirty = false;
         setTimeout(() => {
-          this.router.navigate(["/welcome"]);
+          this._router.navigate(["/welcome"]);
         }, 2000);
       } else if (res.state === false) {
         this.toastr.error(" حدث خطأ أثناء التسجيل ");
@@ -161,7 +159,7 @@ export class OffersComponent implements OnInit {
     const patternTextOnly =
       "^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z ]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-_]*$";
     const patternNumberOnly = /^01[0125][0-9]{8}$/;
-    this.newClient = this.fb.group({
+    this.newClient = this._fb.group({
       name: ["", [Validators.required, this.isNameDuplicated]],
       phone: [
         "",

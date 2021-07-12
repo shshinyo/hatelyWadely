@@ -1,4 +1,4 @@
-import { SouqService } from "../../../services/souq.service";
+import { SouqService } from "../../../shared/services/souq.service";
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { debounceTime } from "rxjs/Operators";
