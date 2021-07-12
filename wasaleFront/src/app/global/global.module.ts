@@ -6,7 +6,7 @@ import { AppRoutingModule } from "../app-routing.module";
 import { HttpClientModule } from "@angular/common/http";
 import { SharedModule } from "../shared/shared.module";
 import { RouterModule } from "@angular/router";
-import { routes } from "./global.routes";
+// import { routes } from "./global.routes";
 import { GlobalComponent } from "./global.component";
 import { ToolbarComponent } from "../Grid/toolbar/toolbar.component";
 import { SideNavComponent } from "../Grid/side-nav/side-nav.component";

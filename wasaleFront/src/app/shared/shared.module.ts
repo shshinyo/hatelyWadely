@@ -12,6 +12,8 @@ import { HighchartsChartModule } from "highcharts-angular";
 import { FooterComponent } from "../Grid/footer/footer.component";
 import { CardComponent } from "./widget/card/card.component";
 import { PieComponent } from "./widget/pie/pie.component";
+import { HttpClientModule } from "@angular/common/http";
+import { PrimeNgModule } from "./primeng.module";
 
 const LOCAL_COMPONENTS = [];
 const SHARED_COMPONENTS = [FooterComponent, CardComponent, PieComponent];
@@ -22,6 +24,7 @@ const SHARED_DIRECTIVES = [];
 
 const THIRD_MODULES = [
   MaterialModule,
+  PrimeNgModule,
   FlexLayoutModule,
   HighchartsChartModule,
   TranslateModule,
@@ -33,7 +36,7 @@ const THIRD_MODULES = [
   AngularSvgIconModule.forRoot(),
 ];
 
-const COMMON_MODULES = [CommonModule, FormsModule, RouterModule, ReactiveFormsModule];
+const COMMON_MODULES = [CommonModule, FormsModule, RouterModule, ReactiveFormsModule, HttpClientModule];
 
 @NgModule({
   declarations: [

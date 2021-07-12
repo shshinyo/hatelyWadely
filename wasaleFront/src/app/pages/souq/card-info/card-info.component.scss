@@ -1,0 +1,10 @@
+#myDiv h5 , #myDiv p  , option{
+  text-align: right;
+}
+option:first-child{
+	display: none;
+  border-radius: 10px;
+}
+option {
+  direction: rtl;
+}

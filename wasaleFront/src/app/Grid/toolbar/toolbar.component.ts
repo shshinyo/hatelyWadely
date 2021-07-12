@@ -52,10 +52,10 @@ export class ToolbarComponent implements OnInit {
       disabled: false,
     },
     {
-      location: "/products",
+      location: "/hatlyWadely-shop",
       outletName: "null",
-      name: "ســوق",
-      icon: "home",
+      name: "السوق",
+      icon: "storefront",
       disabled: false,
     },
     {

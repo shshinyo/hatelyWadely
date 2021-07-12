@@ -1,0 +1,155 @@
+<!-- <div class="mainDiv">
+  <h5 class="namesHeader" (mouseover)="hover(product)"  *ngFor="let product of products" [routerLink]="[product.id]">
+    {{product.name}}
+  </h5>
+</div>
+
+ <div *ngIf="displayDiv"  id="typeDiv" >
+  <div class="filterDiv" *ngFor="let pro of filteredProducts">
+    <h4 *ngIf="pro?.title">{{pro?.title}}</h4>
+    <hr/>
+   <div *ngFor="let elem of pro.myProductss">
+    <p  id="typee" *ngIf="elem?.type" [routerLink]="[selectedcategory , pro.id  , elem.id]">{{elem?.type}}</p>
+  </div>
+</div>
+</div>
+
+<div class="container" style="margin-bottom: 20px; border:1px solid rgb(255, 197, 197,0.5);height: 430px" (mouseout)="showPic()">
+  <div class="row">
+    <div class="col-md-3">
+    <aside *ngIf="diplayImg" id="ASIDE">
+      <img id="bankImg" src="assets/bank.jpg"/>
+    </aside>
+    <aside *ngIf="diplayImg" id="ASIDE">
+      <img id="bankImgg" src="assets/bank.jpg"/>
+    </aside>
+    </div>
+    <div class="col-md-6">
+      <img *ngIf="diplayImg" #imgg id="jumiaPic" src="assets/jumia.jpg">
+    </div>
+  </div>
+</div>
+
+
+
+<h2 style="float: right;background-color: rgb(252, 238, 222);border-radius: 10px;font-weight: bold;">المنتجات الاكثر مبيعا</h2>
+<mdb-carousel [isControls]="true" class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
+              [animation]="'slide'">
+  <mdb-carousel-item *ngFor="let item of slides; let i = index">
+    <div class="col-md-4" *ngFor="let card of item; let cardIndex = index">
+      <mdb-card class="my-1 m-5" style="  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+      border: 0;
+      font-weight: 200;
+      height: 444px;border-radius: 10px">
+        <mdb-card-img [src]="card.imgUrl" style="border-radius:10px;" alt="Card image cap" ></mdb-card-img>
+        <mdb-card-body>
+          <p style="height: 20px;">{{card.description}}</p>
+          <p>{{card.price}}</p>
+          <a href="#" id="cardsBtn" [routerLink]="['card',card.id]" mdbBtn color="info" class="waves-light" mdbWavesEffect>{{card.button}}</a>
+        </mdb-card-body>
+      </mdb-card>
+    </div>
+  </mdb-carousel-item>
+</mdb-carousel>
+
+
+<hr style="margin-top: 20px;"/>
+
+
+<div style="margin-bottom: 70px;" *ngFor="let myCard of secondCards">
+ <div class="Head">
+  <h2>{{myCard.btn}}</h2>
+  <h2>{{myCard.cardTitle}}</h2>
+</div>
+  <div style="display: inline-block;text-align: right;margin-bottom: 10px;" class="col-md-3" *ngFor="let product of myCard.cardProducts">
+    <mdb-card  style="width: 250px;border: 1px solid #ddd;">
+      <mdb-card-img [src]="product.imgUrl"></mdb-card-img>
+      <mdb-card-body>
+        <p style="height: 60px;">
+        <mdb-card-text >
+          {{product.description}}
+        </mdb-card-text>
+      </p>
+      <h4>
+        <mdb-card-text >
+          {{product.price}}
+        </mdb-card-text>
+      </h4>
+        <a id="cardsBtn" [routerLink]="['card', product.id]" href="#" mdbBtn color="info" mdbWavesEffect>{{product.button}}</a>
+      </mdb-card-body>
+    </mdb-card>
+    </div>
+</div>
+
+<div class="container" style="margin-bottom: 20px;height: 350px;">
+  <div class="row">
+    <div class="col-md-5">
+      <img class="maskImg1" src="assets/i1.jpg">
+    </div>
+    <div class="col-md-7">
+      <img class="maskImg2" src="assets/i2.jpg">
+    </div>
+  </div>
+</div>
+
+
+<div class="container" style="height: 430px;">
+  <div class="row">
+    <div class="col-md-12">
+      <img class="offer1"  src="assets/offer1.png">
+    </div>
+    <div class="col-md-12">
+      <img class="offer2" src="assets/offer2.png">
+    </div>
+  </div>
+</div>
+<div class="info">
+<h3>جوميا مصر - أكبر موقع للتسوق عبر الإنترنت
+</h3>
+<p>أصبحت مواقع التسوق عبر الإنترنت الآن جزء من حياتنا اليومية، لأن الجميع يتمتع بإمكانية شراء كل ما يحتاجه، سواء كانت ملابس أو إلكترونيات، دون الحاجة إلى الانتقال من المنزل. هذا ما تقدمه جوميا مصر، والأفضل من هذا أن جوميا مصر توفر لك امكانية العثور علي كل المنتجات التي تبحث عنها في متجر واحد. هذا ما يجعل جوميا أحد أفضل مواقع تسوق عبر الإنترنت في مصر.
+
+</p>
+<h3>استمتع بعروض وخصومات من جوميا لا تنتهي
+</h3>
+<p>جوميا هي موقع تسوق الكتروني ممتع وسهل الاستخدام عند الحاجة إلي شراء أي نوع من المنتجات والأجهزة. نؤكد لك أنك ستعثر على شيء يعجبك في الكتالوج الخاص بنا عند التصفح عبر الانترنت في جوميا مصر. نوفر لكم كتالوج ملابس اون لاين يحتوي علي أكثر من مليون منتج للاختيار من بينهم! يمكنك التسوق لأي شيء تحتاجه سواء كنت تبحث عن ملابس محجبات او ملابس الأطفال واستمتع بالحصول علي احدث الازياء في مصر. جوميا مصر هي واحدة من أكبر مواقع تسوق اون لاين لأننا نسعى دائمًا إلى توسيع الكتالوج الخاص بنا لتقديم جميع المنتجات والاجهزة التي يمكن لعملائنا أن يبحثوا عن شرائها عبر الإنترنت.</p>
+<h3>تسوق الآن جميع المنتجات عبر الإنترنت</h3>
+<p>
+  اشتري الاكلات والطعام المفضل لديك من خلال سوبرماركت جوميا الخاص بنا عبر الإنترنت مليء بجميع مكونات الطعام التي قد تحتاج لها، بالاضافة الي جميع مستلزمات المنزل. يمكنك التسوق بسهولة لشراء اي أجهزة منزلية من مجموعة كبيرة متاحة لدينا اون لاين تحتوي علي اجهزة تشمل ثلاجات، غسالة ملابس او تكييف، على سبيل المثال. اشتري من اكبر تشكيلة الكترونيات عالية الجودة اون لاين من موردين وعلامات تجارية موثوقة. يمكنك شراء تلفزيون جديد لغرفة المعيشة، الهاتف الذكي المفضل لديك أو حتى جهاز بلاي ستيشن 4وPS5، على سبيل المثال. احصل على أحدث إصدارات الهواتف قبل أي شخص آخر في البلد، سواء كنت ترغب في شراء احدث الموبايلات من ابل، شاومي، انفنكس، سامسونج او ريلمي، من بين العديد من ماركات الهواتف الاخري للاختيار من بينها بأرخص اسعار الموبايلات فى مصر. لدينا مجموعة مذهلة أخرى متاحة لدينا وهي مخصصة لأجهزة الكمبيوتر وأجهزة اللاب توب وجميع الاكسسوارات الخاصة بهم. تسوق لشراء طابعة، سكانر، مستلزمات الكمبيوتر أو شاشة كمبيوتر لتحسين تجربة الكمبيوتر أو اللاب توب الخاصة بك إلى اقصى حد! يتم توفير جميع هذه المنتجات وأكثر في جوميا مصر بأرخص سعر في السوق، لذلك اشتري اون لاين اليوم واستمتع بأسرع توصيل الي اي مكان في مصر.</p>
+  <h3>اكتشف عالم التسوق عبر الإنترنت اليوم</h3>
+  <p>اشتري عبر الانترنت واستمتع بأكبر عروض جوميا مصر التي لا تنتهي وتسوق من بين اكبر خصومات المتاحة طوال العام، وكل هذا من أجل إرضاء عملائنا. انضم إلى أعضاء صفحتنا على فيس بوك لتعرف كل العروض والتخفيضات قبل اي شخص آخر والتي تشمل اسبوع الموبايلات، رمضان، عيد ميلاد جوميا، عيد الأماو بلاك فريداي. كما يمكنك أيضاً شراء تذاكر للحفلات والمناسبات الهامة الرائعة. لدينا فريق متخصص للإجابة على كل أسئلتك فورًا على مواقع التواصل الإجتماعي وخدمة العملاء متوفرة طوال الأسبوع للمساعدة في حل أي مشاكل والإجابة على جميع الاستفسارات، ببساطة اتصل علي 19586. اذا كنت بحاجة الي المساعدة في انشاء طلب جديد علي جوميا، اتصل بنا علي 15204 ابتدائا من 1 نوفمبر. بالإضافة إلى ذلك، إذا كنت تمتلك محل أو متجر، يمكنك الآن البدء في بيع منتجاتك على جوميا مصر حيث نحرص دائمًا على مساعدتك في زيادة مبيعاتك! كبر حجم أعمالك الآن وانضم لفريق شركاء جوميا. جوميا مصر توفر لك أفضل خدمات عبر الانترنت، منتجات أصلية 100% وعروض حصرية. استمتع بأسرع توصيل الى باب المنزل، طرق دفع امنة و سهلة، بالاضافة الى ارجاع مجاني لجميع المنتجات خلال 14 يوم من الاستلام، ويمكنك ايضا زيارة صفحة سياسة الاسترجاع للمزيد من المعلومات عن إرجاع منتجات جوميا. ابقوا معنا للحصول على أفضل الأسعار في مصر على جميع المنتجات المفضلة لديك مع جوميا مصر.
+  </p>
+</div>
+<footer class="Foott">
+<div class="row" style="background-color: rgb(51, 46, 46);">
+  <div class="col-md-6">
+    <p style="color: white; font-size: 20px;font-weight: bold; margin-top: 15px; ">
+    تنزيل تطبيق جوميا المجاني <br/>
+    احصل علي المزيد من العروض الحصريه
+    </p>
+  </div>
+  <div class="col-md-6">
+    <img class="footerPic" src="assets/download.png"/>
+  </div>
+</div>
+<div id="footerDiv" class="col-md-4" *ngFor="let elem of footerArray">
+  <h2 style="font-weight: bold;" *ngIf="elem?.head.length">{{elem?.head}}</h2>
+  <div style="color: white;padding-top: 10px;font-weight: bold;" *ngFor="let link of elem.linkArr;let i = index">
+    <h5 *ngIf="link?.links.length">{{link?.links}}</h5>
+  </div>
+  <hr style="border: 1px solid #ddd;">
+</div>
+
+<div class="col-md-3" style="float: right;" >
+  <h2 >
+    تابعونا علي
+  </h2>
+    <a style="list-style: none;text-decoration: none;" href="https://www.facebook.com/JumiaEgypt" id="icons1" class="fab fa-facebook-f"></a>
+    <a style="list-style: none;text-decoration: none;" href="https://twitter.com/JUMIAEgypt" id="icons2" class="fab fa-twitter"></a>
+    <a style="list-style: none;text-decoration: none;" href="https://www.instagram.com/jumiaegypt/" id="icons3" class="fab fa-instagram"></a>
+    <a style="list-style: none;text-decoration: none;"  href="https://www.youtube.com/user/JumiaEgypt" id="icons4" class="fab fa-youtube"></a>
+</div>
+  <p class="copy">copyrights&copy; <br> All Rights Reserved 2021 <br> jumia.com</p>
+<div class="col-md-7">
+  <img class="jm" src="assets/gm.png">
+</div>
+</footer> -->

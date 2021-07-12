@@ -1,0 +1,300 @@
+.mainDiv {
+  padding: 8px;
+  font-weight: bold;
+  font-size: 18px;
+  direction: rtl;
+  border: 1px solid#dddd;
+  float: right;
+  width: 15%;
+  margin-top: 28px;
+  height: 75%;
+  text-align: initial;
+  border-radius: 10px;
+}
+
+.filterDiv {
+  font-weight: bold;
+  text-align: center;
+  float: right;
+  display: inline;
+  margin-top: 28px;
+  border-radius: 10px;
+  background-color: #faf6f6;
+   border: 1px solid rgb(212, 206, 206);
+  width: 185px;
+  height: 250px;
+}
+.row>* {
+  padding-right: calc(var(--bs-gutter-x)/ 2);
+  padding-left: calc(var(--bs-gutter-x)/ 2);
+  margin-top: var(--bs-gutter-y);
+  height: 100px;
+  border-radius: 10px;
+}
+.h4, h4 {
+  font-size: 22px;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 13px;
+  font-weight: normal;
+}
+#jumiaPic{
+  width : 678px;
+    height: 380px;
+  margin-top: 28px;
+  border-radius: 10px;
+
+}
+#bankImg {
+  margin-top: 28px;
+  border-radius: 10px;
+  width: 226px;
+}
+#bankImgg {
+  border-radius: 10px;
+  margin-top: 3px;
+  width: 226px;
+}
+.ASIDE {
+  width: 15%;
+}
+.namesHeader {
+  padding-top: 20px;
+  cursor: pointer;
+}
+
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  text-align: center;
+}
+#cardsBtn {
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+carousel-indicators {
+  position: absolute;
+  right: -8px;
+  bottom: -61px;
+  left: 0;
+  z-index: 15;
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+  margin-right: 15%;
+  margin-left: 15%;
+}
+::ng-deep .carousel-indicators {
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-right: 15%;
+  margin-bottom: 1rem;
+  margin-left: 15%;
+  list-style: none;
+}
+::ng-deep .carousel .carousel-indicators li {
+  width: 44px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: aqua;
+}
+
+.carousel-item {
+  &.active, &.carousel-item-right, &.carousel-item-next {
+    display: flex !important;
+    flex-wrap: wrap
+  }
+}
+::ng-deep .fa-chevron-left:before {
+  content: "<";
+  margin-left: 176px;
+  font-size: 60px;
+  color: cyan;
+  height: 10px;
+}
+::ng-deep .fa-chevron-right:before {
+  content: ">";
+  font-size: 60px;
+  margin-left: 10px;
+  color: cyan;
+  height: 10px;
+}
+
+
+.card-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1.25rem;
+  height: 195px;
+  border-radius: 41px;
+}
+.card {
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+  border: 0;
+  font-weight: 200;
+  height: 500px;
+}
+::ng-deep .card .card-body .card-text {
+  color: #747373;
+  font-size: .9rem;
+  height: 63px;
+  font-weight: 400;
+}
+
+p[_ngcontent-scu-c455] {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 13px;
+  font-weight: normal;
+  height: 20px;
+}
+.Head {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ddd;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+element.style {
+  display: inline-block;
+  text-align: right;
+  margin-bottom: 10px;
+}
+.maskImg1 {
+  width: 480px;
+  border-radius: 10px;
+  height: 300px;
+}
+.maskImg2 {
+  width: 480px;
+  border-radius: 10px;
+  height: 300px;
+}
+.offer1 {
+  margin-bottom: 20px;
+  height: 200px;
+  width: 100%;
+ border-radius: 10px;
+}
+.offer2 {
+  margin-top: 112px;
+  height: 200px;
+  width: 100%;
+  margin-bottom: 20px;
+   border-radius: 10px;
+}
+.Foott {
+  height: 429px;
+  background-color: rgba(0, 0, 0, 0.637);
+ color: white;
+border-radius: 10px;
+}
+#footerDiv {
+text-align: center;
+float: left;
+display: inline;
+height: 230px;
+}
+.footerPic {
+  border-radius: 10px;
+  height: 80px;
+  margin-top: 10px;float: right;
+  margin-right: 20px;
+}
+
+#icons1, #icons2,#icons3,#icons4 {
+  height: 20px;
+  width: 20px;
+  margin: 5px;
+}
+.jm{
+  height: 94px;
+    float: right;
+    width: 406px;
+    border-radius: 10px;
+}
+.copy {
+  float: left;
+    margin-left: 20px;
+    text-align: initial;
+    font-size: 13px;
+}
+.info {
+  height: 600px;
+  background-color: rgb(230, 230, 230);
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+.info h3 {
+  text-align: right;
+}
+::ng-deep .card .card-body .card-text {
+  color: #747373;
+  font-size: 0.9rem;
+  height: 49px;
+  font-weight: 400;
+  line-height: 15px;
+}
+::ng-deep .carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 52px;
+}
+::ng-deep {
+  .img-fluid {
+    max-width: 100%;
+    height: 281px;
+}
+}
+.card[_ngcontent-gii-c455] {
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    border: 0;
+    font-weight: 200;
+    height: 444px;
+}
+::ng-deep .carousel .carousel-indicators li {
+  width: 44px;
+  height: 32px;
+  border-radius: 48%;
+  cursor: pointer;
+  background-color: aqua;
+  margin: 6px;
+  height: 10px;
+}
+::ng-deep.fa,::ng-deep .fas {
+  font-family: "Font Awesome 5 Free";
+  cursor: pointer;
+  font-weight: 900;
+}
+::ng-deep mdb-card-img img.img-fluid {
+  width: 100%;
+  border-radius: 12px;
+}
+::ng-deep.card ::ng-deep .card-body ::ng-deep .card-text {
+  color: #747373;
+  font-size: 0.9rem;
+  font-weight: 400;
+  height: 45px;
+}
+#typee {
+  cursor: pointer;
+  margin-bottom: 15px;
+  font-size: 19px;
+  color: rgba(0, 0, 0, 0.747)
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}

@@ -24,6 +24,14 @@ const routes: Routes = [
         loadChildren: () => import("./user/user.module").then((m) => m.UserModule),
       },
       {
+        path: "hatlyWadely-shop",
+        loadChildren: () => import("./pages/souq/souq.module").then((m) => m.SouqModule),
+      },
+      {
+        path: "cart",
+        loadChildren: () => import("./pages/souq/cart/cart.module").then((m) => m.CartModule),
+      },
+      {
         path: "notfound",
         component: Dashboard404,
       },

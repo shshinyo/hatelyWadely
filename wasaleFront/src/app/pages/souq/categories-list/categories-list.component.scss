@@ -1,0 +1,61 @@
+::ng-deep.carousel-control-next-icon, ::ng-deep.carousel-control-prev-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  cursor: pointer !important;
+}
+
+
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-size: cover;
+}
+.slide {
+  height: 400px;
+}
+.carousel-item {
+  &.active, &.carousel-item-right, &.carousel-item-next {
+    display: flex !important;
+    flex-wrap: wrap
+  }
+}
+.Head {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ddd;
+  border-radius: 10px;
+}
+.infoo {
+  height: 500px;
+  background-color: #ddd;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+.infoo h3 , .infoo p {
+  text-align: right;
+}
+.card-body {
+  flex: 1 1 auto;
+  padding: 1rem 1rem;
+  height: 102px;
+}
+.price {
+  text-align: center;height: 15px !important;line-height: 83px;
+}
+::ng-deep .card .card-body .card-text {
+  color: #747373;
+  font-size: 0.9rem;
+  height: 1px !important;
+  font-weight: 400;
+  line-height: 17px;
+}
+::ng-deep .Head[_ngcontent-lwa-c456] {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ddd;
+  border-radius: 10px;
+  margin-top: 38px;
+}

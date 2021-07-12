@@ -1,0 +1,24 @@
+#cardsss {
+  margin-top: 15px;
+}
+#cardsBtn {
+  border-radius: 10px;
+}
+::ng-deep .card  ::ng-deep.card-body ::ng-deep .card-text {
+  color: #747373;
+  font-size: .9rem;
+  font-weight: 400;
+  height: 13px;
+}
+#form {
+  width: 300px;
+  margin-left:10px ;
+}
+#inp {
+  text-align: right;
+}
+#jumPic {
+  height: 68px;
+  width: 561px;
+  margin-top: 10px;
+}
