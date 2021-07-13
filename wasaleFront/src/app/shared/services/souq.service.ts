@@ -8,6 +8,7 @@ import { debounceTime } from "rxjs/Operators";
 })
 export class SouqService implements OnInit {
   cart = [];
+  mySpan = 0
   constructor(private http: HttpClient) {}
 
   ngOnInit() {}
@@ -19,8 +20,7 @@ export class SouqService implements OnInit {
   selectedCategoryBehaviour = new BehaviorSubject<any>(null);
   selectedCategoryObserve = this.selectedCategoryBehaviour.asObservable();
 
-  myCartBehaviour = new BehaviorSubject<any>(0);
-  myObserveCart = this.myCartBehaviour.asObservable();
+
 
   myCartArrayBehaviour = new BehaviorSubject<any>(null);
   myCartObservable = this.myCartArrayBehaviour.asObservable();

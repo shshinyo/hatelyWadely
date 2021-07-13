@@ -1,5 +1,6 @@
+import { SouqService } from './../../shared/services/souq.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, EventEmitter, HostBinding, OnInit, Output } from "@angular/core";
+import { AfterViewInit, Component, ElementRef, EventEmitter, HostBinding, OnInit, Output, ViewChild } from "@angular/core";
 import { ThemePalette } from "@angular/material/core";
 import { Router } from "@angular/router";
 import { fromEvent } from "rxjs";
@@ -37,7 +38,7 @@ enum Direction {
     ]),
   ],
 })
-export class ToolbarComponent implements OnInit {
+export class ToolbarComponent implements OnInit  , AfterViewInit{
   private isVisible = true;
   navToggle = false;
 
@@ -79,6 +80,13 @@ export class ToolbarComponent implements OnInit {
       icon: "sports_handball",
       disabled: true,
     },
+    {
+      location: "cart/info",
+      outletName: "null",
+      name: "سلة المتجر",
+      icon: "add_shopping_cart",
+      disabled: false,
+    }
   ];
   activeLink = this.links[0];
   background: ThemePalette = "warn";
@@ -98,11 +106,13 @@ export class ToolbarComponent implements OnInit {
   }
 
   // account_circle
-  constructor(private router: Router, private authService: AuthService) {
+  constructor(private router: Router, private authService: AuthService , private souqser : SouqService) {
     console.log(this.loggedIn);
   }
+@ViewChild('span') span : ElementRef<any>
+  ngOnInit(): void {
 
-  ngOnInit(): void {}
+  }
 
   @HostBinding('@toggle')
   get toggle(): VisibilityState {
@@ -117,8 +127,9 @@ export class ToolbarComponent implements OnInit {
       map(([y1, y2]): Direction => (y2 < y1 ? Direction.Up : Direction.Down)),
       distinctUntilChanged(),
       share()
-    );
 
+    );
+   
     const scrollUp$ = scroll$.pipe(filter((direction) => direction === Direction.Up));
 
     const scrollDown = scroll$.pipe(filter((direction) => direction === Direction.Down));

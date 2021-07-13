@@ -1,4 +1,4 @@
-<!-- <div class="mainDiv">
+ <div class="mainDiv">
   <h5 class="namesHeader" (mouseover)="hover(product)"  *ngFor="let product of products" [routerLink]="[product.id]">
     {{product.name}}
   </h5>
@@ -18,76 +18,78 @@
   <div class="row">
     <div class="col-md-3">
     <aside *ngIf="diplayImg" id="ASIDE">
-      <img id="bankImg" src="assets/bank.jpg"/>
+      <img id="bankImg" src="assets/images/images/bank.jpg"/>
     </aside>
     <aside *ngIf="diplayImg" id="ASIDE">
-      <img id="bankImgg" src="assets/bank.jpg"/>
+      <img id="bankImgg" src="assets/images/images/bank.jpg"/>
     </aside>
     </div>
     <div class="col-md-6">
-      <img *ngIf="diplayImg" #imgg id="jumiaPic" src="assets/jumia.jpg">
+      <img *ngIf="diplayImg" #imgg id="jumiaPic" src="assets/images/images/jumia.jpg">
     </div>
   </div>
 </div>
 
 
-
+<div style="margin-bottom: 40px; width: 100%;height: 15px;">
 <h2 style="float: right;background-color: rgb(252, 238, 222);border-radius: 10px;font-weight: bold;">المنتجات الاكثر مبيعا</h2>
-<mdb-carousel [isControls]="true" class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
-              [animation]="'slide'">
-  <mdb-carousel-item *ngFor="let item of slides; let i = index">
-    <div class="col-md-4" *ngFor="let card of item; let cardIndex = index">
-      <mdb-card class="my-1 m-5" style="  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
-      border: 0;
-      font-weight: 200;
-      height: 444px;border-radius: 10px">
-        <mdb-card-img [src]="card.imgUrl" style="border-radius:10px;" alt="Card image cap" ></mdb-card-img>
-        <mdb-card-body>
-          <p style="height: 20px;">{{card.description}}</p>
-          <p>{{card.price}}</p>
-          <a href="#" id="cardsBtn" [routerLink]="['card',card.id]" mdbBtn color="info" class="waves-light" mdbWavesEffect>{{card.button}}</a>
-        </mdb-card-body>
-      </mdb-card>
-    </div>
-  </mdb-carousel-item>
-</mdb-carousel>
+</div>
+
+
+ <p-carousel [value]="cards" [numVisible]="3" [numScroll]="3" [circular]="true" [autoplayInterval]="3000" [responsiveOptions]="cards">
+  <ng-template let-card pTemplate="cards" >
+      <div class="card-item" >
+          <div class="card-item-content">
+              <div class="p-mb-3">
+                  <img [src]="card.imgUrl" id="" />
+              </div>
+              <div>
+                 <h6 class="p-mt-0 p-mb-3 mb-3px" style="height: 40px;text-align: center;">{{card.description}}</h6>
+                  <h6 class="p-mt-0 p-mb-3" style="height: 15px;text-align: center;">{{card.price}}</h6>
+                  <div class="card-buttons p-mt-5">
+                      <button  mat-button  id="cardBton"  type="button"  [routerLink]="['card',card.id]">{{card.button}}</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </ng-template>
+</p-carousel>
+
+
 
 
 <hr style="margin-top: 20px;"/>
-
 
 <div style="margin-bottom: 70px;" *ngFor="let myCard of secondCards">
  <div class="Head">
   <h2>{{myCard.btn}}</h2>
   <h2>{{myCard.cardTitle}}</h2>
 </div>
-  <div style="display: inline-block;text-align: right;margin-bottom: 10px;" class="col-md-3" *ngFor="let product of myCard.cardProducts">
-    <mdb-card  style="width: 250px;border: 1px solid #ddd;">
-      <mdb-card-img [src]="product.imgUrl"></mdb-card-img>
-      <mdb-card-body>
-        <p style="height: 60px;">
-        <mdb-card-text >
+  <div id="divCard" class="col-md-3" *ngFor="let product of myCard.cardProducts" >
+    <mat-card class="cardContent">
+      <img mat-card-image src="{{product.imgUrl}}">
+      <mat-card-content>
+        <mat-card-content style="text-align: center;">
           {{product.description}}
-        </mdb-card-text>
-      </p>
+        </mat-card-content>
       <h4>
-        <mdb-card-text >
+        <mat-card-content >
           {{product.price}}
-        </mdb-card-text>
+        </mat-card-content>
       </h4>
-        <a id="cardsBtn" [routerLink]="['card', product.id]" href="#" mdbBtn color="info" mdbWavesEffect>{{product.button}}</a>
-      </mdb-card-body>
-    </mdb-card>
+        <button id="cardBton"  mat-button [routerLink]="['card', product.id]"   >{{product.button}}</button>
+      </mat-card-content>
+    </mat-card>
     </div>
 </div>
 
 <div class="container" style="margin-bottom: 20px;height: 350px;">
   <div class="row">
     <div class="col-md-5">
-      <img class="maskImg1" src="assets/i1.jpg">
+      <img class="maskImg1" src="assets/images/images/i1.jpg">
     </div>
     <div class="col-md-7">
-      <img class="maskImg2" src="assets/i2.jpg">
+      <img class="maskImg2" src="assets/images/images/i2.jpg">
     </div>
   </div>
 </div>
@@ -96,10 +98,10 @@
 <div class="container" style="height: 430px;">
   <div class="row">
     <div class="col-md-12">
-      <img class="offer1"  src="assets/offer1.png">
+      <img class="offer1"  src="assets/images/images/offer1.png">
     </div>
     <div class="col-md-12">
-      <img class="offer2" src="assets/offer2.png">
+      <img class="offer2" src="assets/images/images/offer2.png">
     </div>
   </div>
 </div>
@@ -128,13 +130,13 @@
     </p>
   </div>
   <div class="col-md-6">
-    <img class="footerPic" src="assets/download.png"/>
+    <img class="footerPic" src="assets/images/images/download.png"/>
   </div>
 </div>
 <div id="footerDiv" class="col-md-4" *ngFor="let elem of footerArray">
   <h2 style="font-weight: bold;" *ngIf="elem?.head.length">{{elem?.head}}</h2>
   <div style="color: white;padding-top: 10px;font-weight: bold;" *ngFor="let link of elem.linkArr;let i = index">
-    <h5 *ngIf="link?.links.length">{{link?.links}}</h5>
+    <p class="myLinks" *ngIf="link?.links.length">{{link?.links}}</p>
   </div>
   <hr style="border: 1px solid #ddd;">
 </div>
@@ -143,13 +145,31 @@
   <h2 >
     تابعونا علي
   </h2>
-    <a style="list-style: none;text-decoration: none;" href="https://www.facebook.com/JumiaEgypt" id="icons1" class="fab fa-facebook-f"></a>
-    <a style="list-style: none;text-decoration: none;" href="https://twitter.com/JUMIAEgypt" id="icons2" class="fab fa-twitter"></a>
-    <a style="list-style: none;text-decoration: none;" href="https://www.instagram.com/jumiaegypt/" id="icons3" class="fab fa-instagram"></a>
-    <a style="list-style: none;text-decoration: none;"  href="https://www.youtube.com/user/JumiaEgypt" id="icons4" class="fab fa-youtube"></a>
+    <div>
+      <img class="socialPics" src="assets/social media icons/facebook.png">
+      <img class="socialPics" src="assets/social media icons/twitter.png">
+      <img class="socialPics" src="assets/social media icons/whatsapp.png">
+    </div>
 </div>
   <p class="copy">copyrights&copy; <br> All Rights Reserved 2021 <br> jumia.com</p>
 <div class="col-md-7">
-  <img class="jm" src="assets/gm.png">
+  <img class="jm" src="assets/images/images/gm.png">
 </div>
-</footer> -->
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

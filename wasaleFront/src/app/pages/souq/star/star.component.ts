@@ -7,11 +7,11 @@ import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
   styleUrls: ['./star.component.scss']
 })
 export class StarComponent implements OnInit , OnChanges {
-  @Input() rating = 0
+  @Input() rating = 0;
   cropWidth = 75;
   constructor() { }
-  ngOnChanges(): void {
-    this.cropWidth = this.rating * 75 / 4.1
+  ngOnChanges() {
+    this.cropWidth = this.rating * (75 / 4.1)
   }
 
   ngOnInit(): void {

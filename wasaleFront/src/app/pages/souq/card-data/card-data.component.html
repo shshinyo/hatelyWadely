@@ -18,18 +18,18 @@
       <p><br> ضرورة الإبلاغ عنها فى غضون 24 ساعة من تاريخ الإستلام. <br> الشخصى) وحتي 30 يوم للمنتجات التالفة مع  <br> الملابس الداخلية ومنتجات الإستخدام <br> استرجاع المنتجات مجاناً لمدة 14 يوم (ماعدا </p>
     </div>
     <div class="col-md-6">
-      <h3 style="text-align: right; margin-top: 20px;">{{myProduct.description}}</h3>
+      <h3 style="text-align: right; margin-top: 20px;">{{myProduct?.detail}}</h3>
       <hr>
-      <h4 style="text-align: center;">{{myProduct.price}}</h4>
+      <h4 style="text-align: center;">{{myProduct?.price}}</h4>
       <p style="text-align: center;">التقييــــــــــــــم</p>
 
-        <app-star [rating]="myProduct.rating" style="margin-bottom: -18px;"></app-star>
+        <app-star [rating]="myProduct?.rating" style="margin-bottom: -18px;"></app-star>
 
-      <button mat-button color="primary" style="width: 365px;margin-top: 10px;height: 35px;" class="bg-info">{{myProduct.button}}</button>
+      <button mat-button color="primary" style="width: 365px;margin-top: 10px;height: 35px;" class="bg-info" (click)="addToCart(myProduct)">{{myProduct?.button}}</button>
     </div>
 
       <div class="col-md-3">
-        <img src="{{myProduct.imgUrl}}">
+        <img src="{{myProduct?.imgUrl}}">
       </div>
   </div>
 </div>

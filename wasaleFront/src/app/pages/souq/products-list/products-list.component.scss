@@ -42,7 +42,7 @@ p {
 }
 #jumiaPic{
   width : 678px;
-    height: 380px;
+  height: 380px;
   margin-top: 28px;
   border-radius: 10px;
 
@@ -63,6 +63,10 @@ p {
 .namesHeader {
   padding-top: 20px;
   cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+.namesHeader:hover {
+  font-size: larger;
 }
 
 
@@ -76,60 +80,7 @@ p {
   margin-bottom: 10px;
   font-weight: bold;
 }
-carousel-indicators {
-  position: absolute;
-  right: -8px;
-  bottom: -61px;
-  left: 0;
-  z-index: 15;
-  display: flex;
-  justify-content: center;
-  padding-left: 0;
-  margin-right: 15%;
-  margin-left: 15%;
-}
-::ng-deep .carousel-indicators {
-  position: absolute;
-  right: 0;
-  bottom: -50px;
-  left: 0;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  padding: 0;
-  margin-right: 15%;
-  margin-bottom: 1rem;
-  margin-left: 15%;
-  list-style: none;
-}
-::ng-deep .carousel .carousel-indicators li {
-  width: 44px;
-  height: 32px;
-  border-radius: 50%;
-  cursor: pointer;
-  background-color: aqua;
-}
 
-.carousel-item {
-  &.active, &.carousel-item-right, &.carousel-item-next {
-    display: flex !important;
-    flex-wrap: wrap
-  }
-}
-::ng-deep .fa-chevron-left:before {
-  content: "<";
-  margin-left: 176px;
-  font-size: 60px;
-  color: cyan;
-  height: 10px;
-}
-::ng-deep .fa-chevron-right:before {
-  content: ">";
-  font-size: 60px;
-  margin-left: 10px;
-  color: cyan;
-  height: 10px;
-}
 
 
 .card-body {
@@ -145,12 +96,7 @@ carousel-indicators {
   font-weight: 200;
   height: 500px;
 }
-::ng-deep .card .card-body .card-text {
-  color: #747373;
-  font-size: .9rem;
-  height: 63px;
-  font-weight: 400;
-}
+
 
 p[_ngcontent-scu-c455] {
   margin-top: 0;
@@ -194,6 +140,12 @@ element.style {
   margin-bottom: 20px;
    border-radius: 10px;
 }
+.maskImg1,.maskImg2 {
+  transition: all .4s ease-in-out;
+}
+.maskImg1:hover,.maskImg2:hover {
+  width: 500px;
+}
 .Foott {
   height: 429px;
   background-color: rgba(0, 0, 0, 0.637);
@@ -212,12 +164,14 @@ height: 230px;
   margin-top: 10px;float: right;
   margin-right: 20px;
 }
-
-#icons1, #icons2,#icons3,#icons4 {
-  height: 20px;
-  width: 20px;
-  margin: 5px;
+.myLinks {
+  cursor: pointer;
+  transition: all .3s ease-in-out;
 }
+.myLinks:hover {
+  font-size: 18px;
+}
+
 .jm{
   height: 94px;
     float: right;
@@ -292,9 +246,98 @@ height: 230px;
   cursor: pointer;
   margin-bottom: 15px;
   font-size: 19px;
-  color: rgba(0, 0, 0, 0.747)
+  color: rgba(0, 0, 0, 0.747);
+  transition: all .3s ease-in-out;
+}
+#typee:hover {
+ font-weight: bold;
 }
 .fa-facebook {
   background: #3B5998;
   color: white;
+}
+
+.card-item {
+  .card-item-content {
+      border: 1px solid aqua;
+      border-radius: 60px 15px;
+      margin: .5rem;
+      text-align: center;
+      height: 470px;
+      padding-top: 29px;
+  }
+
+  .card-image {
+      width: 50%;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      height: 80px;
+      border-radius: 60px 15px;
+      border: 1px solid aqua;
+
+  }
+}
+#divCard {
+  display: inline-block;text-align: right;margin-bottom: 10px;
+  transition: all .3s ease-in-out;
+}
+#divCard:hover {
+  animation: shake 1.2s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.cardContent {
+  width: 250px;border: 1px solid #ddd;
+}
+#cardBton {
+  transition: all .3s ease-in-out;
+  width: 90px;
+  border: 1px solid red;
+  background-color: beige;
+  color: black;
+}
+#cardBton:hover {
+width: 130px;
+background-color: rgba(255, 255, 0, 0.5);
+color: black;
+border: 3px solid rgb(223, 206, 206);
+font-size: larger;
+}
+.card-item-content {
+  transition: all .3s ease-in-out;
+}
+.card-item-content:hover {
+  animation: shake 1.2s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+.socialPics {
+  cursor: pointer;
+  height: 20px; width: 20px;margin: 3px;
+  transition: all .4s ease-in-out;
+}
+.socialPics:hover {
+  width: 25px;
+  height: 23px;
+  margin: 4px;
 }

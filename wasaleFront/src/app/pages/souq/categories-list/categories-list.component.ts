@@ -19,23 +19,23 @@ export class CategoriesListComponent implements OnInit {
   images: any;
 
   myPics = [
-    { img1: "assets/s1.jpg" },
-    { img1: "assets/s2.jpg" },
-    { img1: "assets/s3.jpg" },
-    { img1: "assets/s4.jpg" },
+    { img1: "assets/images/images/s1.jpg" },
+    { img1: "assets/images/images/s2.jpg" },
+    { img1: "assets/images/images/s3.jpg" },
+    { img1: "assets/images/images/s4.jpg" },
   ];
 
   myPics2 = [
-    { img1: "assets/men.jpg" },
-    { img1: "assets/men2.jpg" },
-    { img1: "assets/men3.jpg" },
+    { img1: "assets/images/images/men.jpg" },
+    { img1: "assets/images/images/men2.jpg" },
+    { img1: "assets/images/images/men3.jpg" },
   ];
   myPics3 = [
-    { img1: "assets/h1.jpg" },
-    { img1: "assets/h2.jpg" },
-    { img1: "assets/h3.jpg" },
+    { img1: "assets/images/images/h1.jpg" },
+    { img1: "assets/images/images/h2.jpg" },
+    { img1: "assets/images/images/h3.jpg" },
   ];
-  myPic4 = [{ img1: "assets/c1.jpg" }];
+  myPic4 = [{ img1: "assets/images/images/c1.jpg" }];
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params["category"];
@@ -64,11 +64,5 @@ export class CategoriesListComponent implements OnInit {
         this.div4 = true;
       });
     }
-
-    this.souqSer
-      .getAllCategories()
-      .pipe(debounceTime(100))
-      .subscribe((x) => console.log(x));
-    console.log("sdahdkj");
   }
 }

@@ -48,13 +48,10 @@ FilterMethod(listFilter) {
     })
   }
   myCartArr
-  myValue = 1
-  cartPlus(product) {
+  cartPlus(myProduct) {
     this.router.navigate(['cart/info'])
-   this.souqSer.myCartBehaviour.next(this.myValue++)
-   this.souqSer.myCartArrayBehaviour.next(product)
-   this.souqSer.cart.push(product)
-   console.log(this.myValue)
+   this.souqSer.myCartArrayBehaviour.next(myProduct)
+   this.souqSer.cart.push(myProduct)
   }
 
 }

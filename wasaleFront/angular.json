@@ -28,7 +28,10 @@
               "src/assets",
               "src/manifest.webmanifest"
             ],
-            "styles": ["src/styles/app.scss"],
+            "styles": [
+              "src/styles/app.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
             "scripts": [],
             "webWorkerTsConfig": "tsconfig.worker.json"
           },
@@ -106,7 +109,10 @@
               "src/assets",
               "src/manifest.webmanifest"
             ],
-            "styles": ["src/styles/app.scss"],
+            "styles": [
+              "src/styles/app.scss" ,
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
             "scripts": []
           }
         },

@@ -22,3 +22,28 @@ p {
   height: 35px;
   border-radius: 10px;
 }
+.total {
+  height: 10px;
+    position: absolute;
+    top: 37px;
+    left: 39px;
+    font-weight: bold;
+    color: coral;
+}
+p {
+    text-align: center;
+    height: 20px;
+    color: coral;
+    font-weight: bold;
+}
+::ng-deep .mat-form-field-appearance-fill .mat-select-arrow-wrapper {
+  transform: translateY(-50%);
+  position: relative;
+  top: 20px;
+}
+.matSelect {
+  height: 7px; position: absolute;
+      top: -20px;
+      color: coral;
+      font-weight: bolder;
+}

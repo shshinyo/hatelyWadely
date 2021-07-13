@@ -7,12 +7,15 @@
         على طلبات بقيمة 300 جنيه أو أكثر</p>
       <hr>
      <h5>اختار العنوان</h5>
-      <div style="max-height: 200px;overflow-y: scroll;" *ngFor="let option of options">
-      <select id="region" class="form-control"  style="margin-bottom: 10px">
-          <option aria-readonly="true" style="justify-self: end;" >{{option.region}}</option>
-          <option *ngFor="let elem of option.city">{{elem.place}}</option>
+      <div style="max-height: 200px;overflow-y: scroll;" >
+         <select id="region" class="form-control"  style="margin-bottom: 10px" >
+          <option aria-readonly="true" style="justify-self: end;" *ngFor="let myOption of options" (click)="pushInSelect(myOption)">{{myOption.region}}</option>
+      </select>
+      <select class="form-control"  style="margin-bottom: 10px">
+        <option aria-readonly="true" style="justify-self: end;"*ngFor="let select of myArray">{{select.city}}</option>
       </select>
     </div>
+
 
       <h5>سياسه الاسترجاع</h5>
       <p><br> ضرورة الإبلاغ عنها فى غضون 24 ساعة من تاريخ الإستلام. <br> الشخصى) وحتي 30 يوم للمنتجات التالفة مع  <br> الملابس الداخلية ومنتجات الإستخدام <br> استرجاع المنتجات مجاناً لمدة 14 يوم (ماعدا </p>
@@ -22,9 +25,7 @@
       <hr>
       <h4 style="text-align: center;">{{product.price}}</h4>
       <p style="text-align: center;">التقييــــــــــــــم</p>
-
         <app-star [rating]="product.rating" style="margin-bottom: -18px;"></app-star>
-
       <button mat-button color="primary" style="width: 365px;margin-top: 10px;height: 35px;" class="bg-info">{{product.button}}</button>
     </div>
 

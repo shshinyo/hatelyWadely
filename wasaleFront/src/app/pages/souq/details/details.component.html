@@ -1,4 +1,4 @@
-<!-- <div class="container">
+ <div class="container">
   <div class="row">
     <div class="col-md-5">
       <form class="form-group" id="form">
@@ -7,7 +7,7 @@
       </form>
       </div>
       <div class="col-md-7">
-        <img id="jumPic" src="assets/myJum.png">
+        <img id="jumPic" src="assets/images/images/myJum.png">
       </div>
   </div>
 
@@ -15,21 +15,20 @@
 
 <div class="container">
   <div class="row">
-    <div *ngFor="let product of filteredProducts " id="cardsss" class="col-md-4">
-      <mdb-card style="border: 1px solid #ddd; border-radius: 10px;">
-
-        <mdb-card-img [src]="product.imgUrl" [routerLink]="[product.id]" style="cursor: pointer;"></mdb-card-img>
-        <mdb-card-body>
-          <mdb-card-text style="height: 60px;">
-            <p style="text-align: center; height: 17px;">{{product.detail}}</p>
-          </mdb-card-text>
-          <mdb-card-text>
-            <p style="text-align: center; height: 25px;">{{product.price}}</p>
-          </mdb-card-text>
-          <a style="text-align: center;margin-left: 44px; height: 45px;"  id="cardsBtn"  mdbBtn color="info"
-            mdbWavesEffect (click)="cartPlus(product)">{{product.button}}</a>
-        </mdb-card-body>
-      </mdb-card>
+    <div *ngFor="let myProduct of filteredProducts " id="cardsss" class="col-md-4">
+      <mat-card style="border: 1px solid aqua; border-radius: 10px;">
+        <img mat-card-image src=" {{myProduct.imgUrl}}"  [routerLink]="[myProduct.id]" style="cursor: pointer;" class="cardImg"/>
+        <mat-card style="border : 1px solid aqua">
+          <mat-card-content style="height: 40px;">
+            <p style="text-align: center; height: 17px;">{{myProduct?.detail}}</p>
+          </mat-card-content>
+          <mat-card-content>
+            <p style="text-align: center; height: 25px;">{{myProduct.price}}</p>
+          </mat-card-content>
+          <button   class="cardsBtn bg-info" mat-button
+            (click)="cartPlus(myProduct)">{{myProduct.button}}</button>
+        </mat-card>
+      </mat-card>
     </div>
   </div>
-</div> -->
+</div>

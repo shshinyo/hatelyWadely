@@ -1,7 +1,6 @@
 import { ActivatedRoute } from "@angular/router";
 import { SouqService } from "../../../shared/services/souq.service";
 import { Component, OnInit } from "@angular/core";
-import { debounceTime } from "rxjs/Operators";
 
 @Component({
   selector: "app-products-list",
@@ -19,14 +18,6 @@ export class ProductsListComponent implements OnInit {
   cards: any;
   secondCards: any;
   footerArray: any;
-  slides: any = [[]];
-  chunk(arr, chunkSize) {
-    let R = [];
-    for (let i = 0, len = arr.length; i < len; i += chunkSize) {
-      R.push(arr.slice(i, i + chunkSize));
-    }
-    return R;
-  }
 
   // end cards
 
@@ -38,8 +29,8 @@ export class ProductsListComponent implements OnInit {
     });
     this.souqSer.getAllCategories().subscribe((res: any) => {
       this.cards = res.cards;
-      console.log(this.cards);
-      this.slides = this.chunk(this.cards, 3);
+      console.log('>>',this.cards);
+
     });
     this.souqSer.getAllCategories().subscribe((res: any) => {
       this.secondCards = res.secondCards;
@@ -65,3 +56,8 @@ export class ProductsListComponent implements OnInit {
     this.displayDiv = false;
   }
 }
+
+
+
+
+
