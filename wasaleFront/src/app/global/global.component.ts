@@ -28,8 +28,7 @@ export class GlobalComponent implements OnInit {
   subscription: Subscription;
   // lazyLoading Animation
   loading = false;
-  // toggle floating social
-  toggleFloating = false;
+
   screenMin = false;
   winWidth;
 
@@ -55,10 +54,6 @@ export class GlobalComponent implements OnInit {
       }
     });
 
-    const url = window.location.href;
-    url.includes("contacts")
-      ? (this.toggleFloating = true)
-      : (this.toggleFloating = false);
   }
 
   @HostListener("window:resize", ["$event"])

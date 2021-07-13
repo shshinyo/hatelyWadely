@@ -1,5 +1,5 @@
 // ورب الكعبة ال هيقرب من الفيل دا ... ✊✊✊
-*:not(i, mat-icon, .floating-container, .floating-social-visible, .toggle-social) {
+*:not(i, mat-icon) {
   background-color: white;
 }
 
@@ -7,8 +7,7 @@ mat-sidenav-container,
 mat-sidenav-content {
   height: 100%;
 }
-
-.container {
+.global-container {
   height: calc(100% - 60px) !important;
 }
 //  toolbar
@@ -19,7 +18,6 @@ app-toolbar {
   z-index: 999;
 }
 main {
-  position: relative;
   height: 100%;
   width: 100%;
   margin: 0;

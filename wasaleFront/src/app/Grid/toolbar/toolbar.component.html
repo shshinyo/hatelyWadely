@@ -45,10 +45,10 @@
         routerLink="{{ link.location }}"
         [disabled]="link.disabled"
       >
-        <mat-icon style="margin-left: 10px; color: #ff6e00; ">{{ link.icon }}</mat-icon>
+        <mat-icon style="margin-left: 10px; color: #ff6e00">{{ link.icon }}</mat-icon>
         {{ link.name }}
       </a>
-      <span #span class="mySpan">0</span>
+      <span #span class="mySpan">15</span>
     </nav>
   </div>
 
@@ -82,8 +82,8 @@
         styleClass="p-mr-2"
         [style]="{
           'background-color': '#ff6e00',
-          color: '#ffffff',
-          margin: '0px 10px'
+          'color': '#ffffff',
+          'margin': '0px 10px'
         }"
         size="large"
         shape="circle"
@@ -132,4 +132,3 @@
     </button>
   </div>
 </mat-toolbar>
-

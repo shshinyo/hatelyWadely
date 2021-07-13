@@ -15,9 +15,16 @@ import { PieComponent } from "./widget/pie/pie.component";
 import { HttpClientModule } from "@angular/common/http";
 import { PrimeNgModule } from "./primeng.module";
 import { ConfirmDialogComponent } from "./components/confirm-dialog.component";
+import { SocialMediaFloatingComponent } from "./components/social-media-floating.component";
 
 const LOCAL_COMPONENTS = [];
-const SHARED_COMPONENTS = [FooterComponent, ConfirmDialogComponent, CardComponent, PieComponent];
+const SHARED_COMPONENTS = [
+  FooterComponent,
+  ConfirmDialogComponent,
+  CardComponent,
+  PieComponent,
+  SocialMediaFloatingComponent,
+];
 
 const LOCAL_DIRECTIVES = [];
 
@@ -37,7 +44,13 @@ const THIRD_MODULES = [
   AngularSvgIconModule.forRoot(),
 ];
 
-const COMMON_MODULES = [CommonModule, FormsModule, RouterModule, ReactiveFormsModule, HttpClientModule];
+const COMMON_MODULES = [
+  CommonModule,
+  FormsModule,
+  RouterModule,
+  ReactiveFormsModule,
+  HttpClientModule,
+];
 
 @NgModule({
   declarations: [
