@@ -29,13 +29,13 @@ myArray : []
     let myLastId = this.route.snapshot.params['cartId']
 
     this.souqSer.getAllCategories().subscribe(res=>{
-      this.product = res.categories.find(elem=>elem.id == this.selectedCategory).myProducts.find(elem=>elem.id == id).myProductss.find(elem=>elem.id == myId).details
+      this.product = res.categories.find(elem=>elem.id == this.selectedCategory).myProducts.find(elem=>elem.id == id).myProductss.find(elem=>elem.id == myId).details.find(elem=>elem.id == myLastId)
       console.log('haha',this.product)
     })
   }
   pushInSelect(myOption) {
     console.log(myOption)
-    console.log('okkkkkkkk')
+
   }
 
 }

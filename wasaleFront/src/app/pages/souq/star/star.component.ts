@@ -12,9 +12,11 @@ export class StarComponent implements OnInit , OnChanges {
   constructor() { }
   ngOnChanges() {
     this.cropWidth = this.rating * (75 / 4.1)
+    console.log('lll',this.rating)
   }
 
   ngOnInit(): void {
+
   }
 
 }
