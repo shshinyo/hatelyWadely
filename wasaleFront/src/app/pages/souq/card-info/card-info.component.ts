@@ -15,16 +15,15 @@ product
 selectedCategory
 myArray : []
   constructor(private souqSer : SouqService , private route : ActivatedRoute) {
-
   }
 
   ngOnInit(): void {
     this.souqSer.getAllCategories().subscribe(res=>{
       this.options = res.options
     })
-    this.souqSer.selectedCategoryObserve.subscribe(res=>console.log('oh',res))
-    let id = this.route.snapshot.params['productType']
+    this.souqSer.selectedCategoryObserve.subscribe(res=>this.selectedCategory = res)
     this.selectedCategory = this.route.snapshot.params['selectedCategory']
+    let id = this.route.snapshot.params['productType']
     let myId =  this.route.snapshot.params['productName']
     let myLastId = this.route.snapshot.params['cartId']
 
