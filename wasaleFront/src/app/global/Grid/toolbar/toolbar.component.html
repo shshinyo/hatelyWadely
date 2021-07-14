@@ -35,7 +35,6 @@
       fxShow.lt-xl
       fxHide.sm
       fxHide.lt-sm
-      [color]="background"
     >
       <a
         mat-tab-link
@@ -45,7 +44,7 @@
         routerLink="{{ link.location }}"
         [disabled]="link.disabled"
       >
-        <mat-icon style="margin-left: 10px; color: #ff6e00">{{ link.icon }}</mat-icon>
+        <mat-icon style="margin: 0 10px">{{ link.icon }}</mat-icon>
         {{ link.name }}
       </a>
       <span #span class="mySpan">15</span>

@@ -10,11 +10,22 @@ mat-toolbar {
   margin: 0;
   direction: rtl;
   z-index: 999;
-
 }
 
 .activeLink {
   border-bottom: 3.5px solid #ff4b4b;
+  color: #ff6e00;
+}
+
+nav {
+  a:hover {
+    color: #ff6e00;
+    mat-icon {
+      height: 30px;
+      width: 30px;
+      font-size: 30px;
+    }
+  }
 }
 
 .logo-container {
@@ -73,11 +84,11 @@ mat-toolbar {
   }
 }
 .mySpan {
-  color:#ff6e00;
+  color: #ff6e00;
   position: relative;
-    left: 132px;
-    top: -3px;
-    font-size: 18px;
+  left: 132px;
+  top: -3px;
+  font-size: 18px;
 }
 
 .toggleButton {

@@ -88,8 +88,7 @@ export class ToolbarComponent implements OnInit  , AfterViewInit{
       disabled: false,
     }
   ];
-  activeLink = this.links[0];
-  background: ThemePalette = "warn";
+
   // user is logged in
   get loggedIn(): boolean {
     return this.authService.isLoggedIn;
