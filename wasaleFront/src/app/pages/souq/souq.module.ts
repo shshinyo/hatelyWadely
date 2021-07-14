@@ -12,6 +12,7 @@ import { CardDataComponent } from './card-data/card-data.component';
 import { SouqRoutingModule } from './souq-routing.module';
 import { MaterialModule } from 'src/app/shared/material.module';
 import { PrimeNgModule } from 'src/app/shared/primeng.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -25,9 +26,9 @@ import { PrimeNgModule } from 'src/app/shared/primeng.module';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     FormsModule,
     SouqRoutingModule,
-    MaterialModule,
     PrimeNgModule
   ],
   providers : []

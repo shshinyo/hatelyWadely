@@ -1,11 +1,17 @@
 @import "variables";
-.h-18 {
-  height: 18px;
+
+$color: #ff6e00;
+// border
+.b-r-5 {
+  border-radius: 5px;
 }
-.h-t-18 {
-  line-height: 18px;
-  height: 20px;
+.b-r-3 {
+  border-radius: 3px;
 }
+.b-r-2 {
+  border-radius: 2px;
+}
+
 .p-4 {
   margin: 4px !important;
 }
@@ -22,14 +28,83 @@
   margin-top: 8px !important;
 }
 
-.m-r-4 {
-  margin-right: 4px !important;
+.m-r-5 {
+  margin-right: 5px !important;
 }
+
 
 .w-full {
   width: 100%;
 }
-
+// height
+.h-18 {
+  height: 18px;
+}
+.h-40 {
+  height: 40px !important;
+}
+.h-t-18 {
+  line-height: 18px;
+  height: 20px;
+}
 .h-full {
   height: 100%;
+}
+// titles
+.tittle-18 {
+  padding: 0;
+  margin: 0;
+  height: 20px;
+  font-size: 1.25rem;
+}
+// weight
+.t-bold {
+  font-weight: bold;
+}
+.t-400 {
+  font-weight: 400;
+}
+.t-600 {
+  font-weight: 600;
+}
+// align
+.t-start {
+  text-align: start;
+}
+.t-end {
+  text-align: end;
+}
+.t-center {
+  text-align: center;
+}
+// custom
+.button1 {
+  height: 45px;
+  margin: 0 10px !important;
+  font-size: 19px !important;
+  font-weight: bold;
+  mat-icon {
+    font-size: 30px;
+    height: 30px;
+    width: 30px;
+    margin: 0 5px;
+  }
+}
+
+.button1:hover {
+  color: $color;
+}
+@media screen and (max-width: 600px) {
+  .button1 {
+    height: 35px !important;
+    margin: 5px !important;
+    font-size: 16px !important;
+    font-weight: bold;
+    mat-icon {
+      font-size: 25px;
+      height: 25px;
+      width: 25px;
+      margin: 0 3px;
+    }
+  }
 }

@@ -13,7 +13,8 @@ import { ButtonModule } from "primeng/button";
 import { MultiSelectModule } from "primeng/multiselect";
 import { FileUploadModule } from "primeng/fileupload";
 import { HttpClientModule } from "@angular/common/http";
-import {CarouselModule} from 'primeng/carousel';
+import { CarouselModule } from "primeng/carousel";
+import { GalleriaModule } from "primeng/galleria";
 
 @NgModule({
   exports: [
@@ -31,7 +32,8 @@ import {CarouselModule} from 'primeng/carousel';
     MultiSelectModule,
     FileUploadModule,
     HttpClientModule,
-    CarouselModule
+    CarouselModule,
+    GalleriaModule,
   ],
 })
 export class PrimeNgModule {}
