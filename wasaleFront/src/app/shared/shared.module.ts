@@ -9,13 +9,13 @@ import { TranslateModule } from "@ngx-translate/core";
 
 import { MaterialModule } from "./material.module";
 import { HighchartsChartModule } from "highcharts-angular";
-import { FooterComponent } from "../Grid/footer/footer.component";
 import { CardComponent } from "./widget/card/card.component";
 import { PieComponent } from "./widget/pie/pie.component";
 import { HttpClientModule } from "@angular/common/http";
 import { PrimeNgModule } from "./primeng.module";
 import { ConfirmDialogComponent } from "./components/confirm-dialog.component";
 import { SocialMediaFloatingComponent } from "./components/social-media-floating.component";
+import { FooterComponent } from "../global/Grid/footer/footer.component";
 
 const LOCAL_COMPONENTS = [];
 const SHARED_COMPONENTS = [

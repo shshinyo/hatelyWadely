@@ -25,10 +25,9 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [AppComponent, Dashboard404],
   imports: [
     BrowserModule,
+    SharedModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    HttpClientModule,
-    SharedModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

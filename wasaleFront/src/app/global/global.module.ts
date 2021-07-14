@@ -2,16 +2,14 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { AppRoutingModule } from "../app-routing.module";
 import { HttpClientModule } from "@angular/common/http";
 import { SharedModule } from "../shared/shared.module";
-import { RouterModule } from "@angular/router";
-// import { routes } from "./global.routes";
 import { GlobalComponent } from "./global.component";
-import { ToolbarComponent } from "../Grid/toolbar/toolbar.component";
-import { SideNavComponent } from "../Grid/side-nav/side-nav.component";
-import { SymbolNamePipe } from "../Grid/toolbar/symbol-name.pipe";
-import { CasedNamePipe } from "../Grid/toolbar/cased-name.pipe";
+import { ToolbarComponent } from "./Grid/toolbar/toolbar.component";
+import { SideNavComponent } from "./Grid/side-nav/side-nav.component";
+import { SymbolNamePipe } from "../shared/pipes/symbol-name.pipe";
+import { CasedNamePipe } from "../shared/pipes/cased-name.pipe";
+import { GlobalRoutingModule } from "./global-routing.module";
 
 @NgModule({
   declarations: [
@@ -23,13 +21,11 @@ import { CasedNamePipe } from "../Grid/toolbar/cased-name.pipe";
   ],
   imports: [
     CommonModule,
-    RouterModule,
-    // RouterModule.forChild(routes),
+    SharedModule,
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
     HttpClientModule,
-    SharedModule,
+    GlobalRoutingModule,
   ],
 })
 export class GlobalModule {}

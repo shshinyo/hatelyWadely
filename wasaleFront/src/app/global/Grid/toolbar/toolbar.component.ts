@@ -1,4 +1,3 @@
-import { SouqService } from './../../shared/services/souq.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { AfterViewInit, Component, ElementRef, EventEmitter, HostBinding, OnInit, Output, ViewChild } from "@angular/core";
 import { ThemePalette } from "@angular/material/core";
@@ -12,6 +11,7 @@ import {   distinctUntilChanged,
   throttleTime, } from "rxjs/Operators";
 import { newUser } from "src/app/Interfaces/authUser";
 import { AuthService } from "src/app/shared/services/auth.service";
+import { SouqService } from 'src/app/shared/services/souq.service';
 
 enum VisibilityState {
   Visible = 'visible',
@@ -129,7 +129,7 @@ export class ToolbarComponent implements OnInit  , AfterViewInit{
       share()
 
     );
-   
+
     const scrollUp$ = scroll$.pipe(filter((direction) => direction === Direction.Up));
 
     const scrollDown = scroll$.pipe(filter((direction) => direction === Direction.Down));
