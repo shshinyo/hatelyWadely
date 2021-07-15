@@ -11,14 +11,16 @@ export interface Offer {
 })
 export class SouqService implements OnInit {
   cart = [];
-  mySpan = 0;
   data = [
     { imgUrl: "../../assets/images/images/dd1.jpg" },
     { imgUrl: "../../assets/images/images/dd2.jpg" },
     { imgUrl: "../../assets/images/images/dd3.jpg" },
     { imgUrl: "../../assets/images/images/dd4.jpg" },
+    { imgUrl: "../../assets/images/images/dd2.jpg" },
   ];
-  Offers$: Observable<Offer> = from(this.data);
+  mySpan = 0;
+  // for test
+  Offers$: Observable<Offer[]> = of(this.data);
   constructor(private http: HttpClient) {}
   ngOnInit() {}
 

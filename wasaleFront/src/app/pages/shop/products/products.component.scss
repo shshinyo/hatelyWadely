@@ -52,7 +52,7 @@ $color: #ff6e00;
   }
   // just leave it alone (-_-)
   .carousel {
-    background-color: #5370ae;
+    background-color: #ffff;
     ::ng-deep {
       .p-galleria.p-galleria-indicator-onitem,
       .p-galleria-indicators {
@@ -80,22 +80,46 @@ $color: #ff6e00;
   .filterBanner {
     position: relative;
     right: -20px;
-    background-color: #ffff;
+    background-color: #ffffff;
   }
 }
 
 .best-seller {
-  height: 220px;
+  min-height: 250px;
   margin-bottom: 20px;
-  background-color: #ffff;
-  .image-pic-carousel {
-    img {
-      min-height: 150px;
-      max-height: 150px;
-      min-width: 150px;
-      max-width: 150px;
-      object-fit: cover;
-    }
+  background-color: #ffffff;
+  item {
+    margin: 8px 0;
+    border-radius: 5px;
+    transition: 0.1s ease-in;
+  }
+  item:hover,
+  item:checked {
+    cursor: pointer;
+    -webkit-box-shadow: 0px 0px 15px 6px rgba(214, 214, 214, 1);
+    -moz-box-shadow: 0px 0px 15px 6px rgba(214, 214, 214, 1);
+    box-shadow: 0px 0px 15px 6px rgba(214, 214, 214, 1);
+  }
+}
+
+.grateOffer {
+  height: 280px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  .subOffer {
+    height: 100%;
+    border-radius: 5px;
+    background-color: #6d5bbe;
+    transition: .1s ease-in;
+  }
+  .subOffer:hover,
+  .subOffer:checked {
+    cursor: pointer;
+    -webkit-box-shadow: 0px 0px 15px 6px rgba(214, 214, 214, 1);
+    -moz-box-shadow: 0px 0px 15px 6px rgba(214, 214, 214, 1);
+    box-shadow: 0px 0px 15px 6px rgba(214, 214, 214, 1);
   }
 }
 

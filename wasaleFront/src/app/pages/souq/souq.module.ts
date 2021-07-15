@@ -27,9 +27,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     SharedModule,
-    FormsModule,
     SouqRoutingModule,
-    PrimeNgModule
   ],
   providers : []
 })

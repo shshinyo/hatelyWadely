@@ -24,6 +24,10 @@ export const routes: Routes = [
         component: OffersComponent,
       },
       {
+        path: "shop",
+        loadChildren: () => import("./shop/shop.module").then((m) => m.ShopModule),
+      },
+      {
         path: "soon",
         component: SoonComponent,
       },

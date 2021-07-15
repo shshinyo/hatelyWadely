@@ -3,7 +3,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { Dashboard404 } from "./Error404/dashboard.component";
 
 import { GlobalComponent } from "./global/global.component";
-import { AdminGuard } from "./Guards/admin.guard";
+import { AdminGuard } from "./core/Guards/admin.guard";
 
 const routes: Routes = [
   {

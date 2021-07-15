@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
 import { Subject } from "rxjs";
-import { newUser } from "src/app/Interfaces/authUser";
+import { newUser } from "src/app/shared/utilities/authUser";
 
 @Injectable({
   providedIn: "root",

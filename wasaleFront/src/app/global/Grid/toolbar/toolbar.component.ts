@@ -9,7 +9,7 @@ import {   distinctUntilChanged,
   pairwise,
   share,
   throttleTime, } from "rxjs/Operators";
-import { newUser } from "src/app/Interfaces/authUser";
+import { newUser } from "src/app/shared/utilities/authUser";
 import { AuthService } from "src/app/shared/services/auth.service";
 import { SouqService } from 'src/app/shared/services/souq.service';
 
@@ -53,7 +53,7 @@ export class ToolbarComponent implements OnInit  , AfterViewInit{
       disabled: false,
     },
     {
-      location: "/hatlyWadely-shop",
+      location: "/shop",
       outletName: "null",
       name: "السوق",
       icon: "storefront",

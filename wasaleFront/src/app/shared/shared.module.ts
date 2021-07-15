@@ -16,6 +16,8 @@ import { PrimeNgModule } from "./primeng.module";
 import { ConfirmDialogComponent } from "./components/confirm-dialog.component";
 import { SocialMediaFloatingComponent } from "./components/social-media-floating.component";
 import { FooterComponent } from "../global/Grid/footer/footer.component";
+import { ItemComponent } from "./components/item/item.component";
+import { ItemName } from "./pipes/item-name.pipe";
 
 const LOCAL_COMPONENTS = [];
 const SHARED_COMPONENTS = [
@@ -23,7 +25,9 @@ const SHARED_COMPONENTS = [
   ConfirmDialogComponent,
   CardComponent,
   PieComponent,
+  ItemName,
   SocialMediaFloatingComponent,
+  ItemComponent
 ];
 
 const LOCAL_DIRECTIVES = [];
