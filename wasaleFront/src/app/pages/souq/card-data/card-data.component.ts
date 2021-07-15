@@ -12,6 +12,11 @@ import { Component, OnInit } from '@angular/core';
 export class CardDataComponent implements OnInit {
 myProduct
 options
+product
+myArray : []
+myInfoArr : []
+blur = false
+showDiv = false
 
 
 
@@ -22,13 +27,23 @@ options
       this.options = res.options
     })
      let myCardId = this.route.snapshot.params['id']
+     let myCardId2 = this.route.snapshot.params['id']
      this.souqSer.getAllCategories().subscribe(res=>{
-       this.myProduct = res.cards.find(elem=>elem.id == myCardId)
+       this.myProduct = res.cards.find(elem=>elem.id == myCardId) || res.secondCards.find(elem=> elem).cardProducts.find(elem=>elem.id == myCardId2)
      })
   }
   addToCart(myProduct) {
     this.souqSer.cart.push(myProduct)
     this.router.navigate(['cart/info'])
   }
+  pushInSelect(myOption) {
+    this.myArray = myOption.city
+    this.myInfoArr = myOption.info
+    this.blur = true
+    this.showDiv = true
+   }
+   onBlur () {
+     this.blur = false
+   }
 
 }

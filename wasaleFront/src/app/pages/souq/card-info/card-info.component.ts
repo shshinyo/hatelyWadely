@@ -1,5 +1,5 @@
 import { find } from 'rxjs/Operators';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SouqService } from '../../../shared/services/souq.service';
 import { Component,  OnInit } from '@angular/core';
 
@@ -9,13 +9,16 @@ import { Component,  OnInit } from '@angular/core';
   styleUrls: ['./card-info.component.scss']
 })
 export class CardInfoComponent implements OnInit {
-options
-city
-product
+  product
 selectedCategory
 myArray : []
-  constructor(private souqSer : SouqService , private route : ActivatedRoute) {
-  }
+options : []
+  myInfoArr : []
+  offersArr : []
+  blur = false
+  showDiv = false
+    constructor(private souqSer : SouqService , private route : ActivatedRoute , private router : Router) {
+    }
 
   ngOnInit(): void {
     this.souqSer.getAllCategories().subscribe(res=>{
@@ -31,10 +34,24 @@ myArray : []
       this.product = res.categories.find(elem=>elem.id == this.selectedCategory).myProducts.find(elem=>elem.id == id).myProductss.find(elem=>elem.id == myId).details.find(elem=>elem.id == myLastId)
       console.log('haha',this.product)
     })
+    this.souqSer.getAllCategories().subscribe(res=>{
+      this.offersArr = res.offers
+      console.log('heyyyy',this.offersArr)
+    })
   }
   pushInSelect(myOption) {
     console.log(myOption)
+    this.myArray = myOption.city
+    this.myInfoArr = myOption.info
+    this.blur = true
+    this.showDiv = true
 
   }
+  onBlur () {
+    this.blur = false
+  }
+  navigateFunc () {
+    this.router.navigateByUrl('hatlyWadely-shop/groceries/gross/pasta')
+    }
 
 }
