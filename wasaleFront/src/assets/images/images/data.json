@@ -2,6 +2,7 @@
   "categories": [
     {
       "name": "بقالة",
+      "icon" : "assets/images/images/watermelon.svg",
       "id": "groceries",
       "myProducts": [
         {
@@ -2072,6 +2073,7 @@
     },
     {
       "name": "ازياء ",
+      "icon" : "assets/images/images/tshirt.svg",
       "id": "fashion",
       "myProducts": [
         {
@@ -3938,6 +3940,7 @@
     },
     {
       "name": "الصحه والجمال",
+      "icon" : "assets/images/images/cosmetics.svg",
       "id": "beauty",
       "myProducts": [
         {
@@ -6014,6 +6017,7 @@
     },
     {
       "name": "منتجات العنايه بالاطفال",
+      "icon" : "assets/images/images/smiling-baby.svg",
       "id": "chlidrenCare",
       "myProducts": [
         {

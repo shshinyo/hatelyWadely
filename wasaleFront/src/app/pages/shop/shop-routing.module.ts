@@ -6,8 +6,7 @@ import { ProductsComponent } from "./products/products.component";
 const routes: Routes = [
   {
     path: "",
-    component: ProductsComponent,
-    pathMatch: "full",
+    component: ProductsComponent
   },
   // need to change and edit
   { path: ':item/:id', component: CardDataComponent },

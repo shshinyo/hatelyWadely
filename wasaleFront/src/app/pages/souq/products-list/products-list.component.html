@@ -1,3 +1,4 @@
+
 <div
   class="sub-header mat-elevation-z2"
   fxLayout="row wrap"
@@ -58,17 +59,12 @@
     fxLayoutGap="20px"
   >
     <div class="sideNav" fxFlex="18" fxLayout="row wrap" fxLayoutAlign="center start">
-      <div
-        class="tap"
-        fxFlex="100"
-        fxLayoutAlign="start center"
-        *ngFor="let product of products"
-        [routerLink]="product.id"
-        (mouseover)="hover(product)"
-      >
+
+      <div class="tap" fxFlex="100" fxLayoutAlign="start center" *ngFor="let product of products" [routerLink]="product.id" (mouseover)="hover(product)">
         <!-- Enter icon -->
         <mat-icon>insert_emoticon</mat-icon>
-        {{ product.name }}
+        {{ product.name  }}
+
       </div>
     </div>
     <div

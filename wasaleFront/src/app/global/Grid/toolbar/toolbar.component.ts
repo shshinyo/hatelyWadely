@@ -53,7 +53,7 @@ export class ToolbarComponent implements OnInit  , AfterViewInit{
       disabled: false,
     },
     {
-      location: "/shop",
+      location: "/hatlyWadely-shop",
       outletName: "null",
       name: "السوق",
       icon: "storefront",

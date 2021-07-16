@@ -2,6 +2,7 @@ $color: #ff6e00;
 .body-container {
   width: 100%;
   background-color: whitesmoke;
+
 }
 .sub-header {
   position: sticky;
@@ -102,6 +103,30 @@ $color: #ff6e00;
   }
 }
 
+.filterDiv {
+  font-weight: bold;
+  text-align: center;
+  float: right;
+  display: inline;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+  width: 170px;
+  height: 180px;
+}
+#typeDiv {
+  width: 530px;
+  position: absolute;
+  right: 372px;
+  top: 95px;
+  z-index: 2;
+}
+.myIconImg {
+  height: 20px;
+  width: 20px;
+  position: relative;
+  left: 4px;
+}
+
 .grateOffer {
   height: 280px;
   padding: 10px;
@@ -122,6 +147,7 @@ $color: #ff6e00;
     box-shadow: 0px 0px 15px 6px rgba(214, 214, 214, 1);
   }
 }
+
 
 /*old style
 .mainDiv {

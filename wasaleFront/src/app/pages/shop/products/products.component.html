@@ -48,7 +48,7 @@
     </button>
   </div>
 </div>
-<div class="body-container" fxLayout="row wrap" fxLayoutAlign="center center" dir="rtl">
+<div class="body-container" fxLayout="row wrap" fxLayoutAlign="center center" dir="rtl" >
   <div
     class="banner"
     fxFlex="100"
@@ -58,10 +58,11 @@
     fxLayoutGap="20px"
   >
     <div
-      class="sideNav mat-elevation-z1"
+     class="sideNav mat-elevation-z1"
       fxFlex="18"
       fxLayout="row wrap"
       fxLayoutAlign="center start"
+      style="height: 350px;"
     >
       <div
         class="tap"
@@ -72,16 +73,30 @@
         (mouseover)="hover(product)"
       >
         <!-- Enter icon -->
-        <mat-icon>insert_emoticon</mat-icon>
+       <img src="{{product.icon}}" class="myIconImg"/>
         {{ product.name }}
       </div>
     </div>
+
+    <div *ngIf="displayDiv" id="typeDiv" style="position: absolute;">
+      <div class="filterDiv" *ngFor="let pro of filteredProducts" >
+        <h4 *ngIf="pro?.title">{{ pro?.title }}</h4>
+        <hr />
+        <div *ngFor="let elem of pro.myProductss">
+          <p id="typee" *ngIf="elem?.type" [routerLink]="[selectedcategory, pro.id, elem.id]" style="font-size: 15px;font-weight: normal;cursor: pointer;">
+            {{ elem?.type }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+
     <div
-      *ngIf="displayCarousel"
       class="carousel mat-elevation-z1"
-      fxFlex="44"
+      fxFlex="47"
       fxLayout="row wrap"
       fxLayoutAlign="center center"
+      *ngIf="diplayImg"
     >
       <p-galleria
         fxFill
@@ -111,18 +126,19 @@
       </p-galleria>
     </div>
     <div
-      *ngIf="!displayCarousel"
-      class="carousel filterBanner"
-      fxFlex="44"
-      (mouseout)="showPic()"
+      *ngIf="displayDiv"
+      class="carousel filterBanner mb-4"
+      fxFlex="45"
+      style="position: relative;right: 1px;height: 370px;top: 22px;"
+
     >
       <!-- handel links here -->
     </div>
-    <div class="ads" fxFlex="15" fxLayout="row wrap" fxLayoutAlign="center space-between">
-      <div fxFlex="100" class="ad mat-elevation-z1" fxLayoutAlign="center center">
+    <div class="ads" fxFlex="17" fxLayout="row wrap" fxLayoutAlign="center space-between"  (mouseover)="hideDiv()">
+      <div fxFlex="103" class="ad mat-elevation-z1" fxLayoutAlign="center center">
         اعلان
       </div>
-      <div fxFlex="100" class="ad mat-elevation-z1" fxLayoutAlign="center center">
+      <div fxFlex="103" class="ad mat-elevation-z1" fxLayoutAlign="center center">
         اعلان
       </div>
     </div>
@@ -133,6 +149,8 @@
     fxFlex="80"
     fxLayout="row wrap"
     fxLayoutAlign="center start"
+    style="margin-top: 15px;"
+    (mouseover)="hideDiv()"
   >
     <div class="title tittle-18 t-start t-600 m-r-5 h-40" fxFlex="100">
       المنتجات الاكثر مبيعا
@@ -159,7 +177,6 @@
             fxFlex="97"
             [item]="product"
             [routerLink]="['item', product.id]"
-            (mouseover)="showP(product.id)"
           ></item>
         </div>
       </ng-template>
@@ -232,7 +249,6 @@
 <!-- <div
   class="container"
   style="margin-bottom: 20px; border: 1px solid rgb(255, 197, 197, 0.5); height: 430px"
-  (mouseout)="showPic()"
 >
   <div class="row">
     <div class="col-md-3">

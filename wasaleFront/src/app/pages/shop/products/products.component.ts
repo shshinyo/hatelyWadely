@@ -10,7 +10,6 @@ import { QueryParams } from "src/app/shared/utilities/query-params";
 })
 export class ProductsComponent implements OnInit {
   //  hide and show on hover (filter & carouser)
-  displayCarousel = true;
   search: string | null = null;
   carouselOffers$ = this._souqSer.Offers$;
   responsiveOptions: any[] = [
@@ -48,21 +47,11 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
     this._souqSer.getAllCategories().subscribe((res: any) => {
       this.products = res.categories;
-      console.log("yey", this.products);
       this.filteredProducts = res.categories;
-    });
-    this._souqSer.getAllCategories().subscribe((res: any) => {
       this.cards = res.cards;
-      console.log(">>", this.cards);
-    });
-    this._souqSer.getAllCategories().subscribe((res: any) => {
       this.secondCards = res.secondCards;
-      console.log(this.cards);
-    });
-    this._souqSer.getAllCategories().subscribe((res: any) => {
       this.footerArray = res.myFooter;
-      console.log("ha", this.cards);
-    });
+    })
   }
 
   onSearch(value: string): void {
@@ -79,22 +68,20 @@ export class ProductsComponent implements OnInit {
     this.filteredProducts = this.products.find(
       (elem) => elem.name == product.name
     ).myProducts;
-    this.displayCarousel = false;
-
     this.displayDiv = true;
     this.diplayImg = false;
     this.selectedcategory = product.id;
     console.log(this.selectedcategory);
     this._souqSer.selectedCategoryBehaviour.next(this.selectedcategory);
   }
-  showPic() {
-    this.displayCarousel = !this.displayCarousel;
+  // showDiv() {
+  //   this.diplayImg = false;
+  //   this.displayDiv = true;
+  // }
+   hideDiv() {
+     this.diplayImg = true;
+      this.displayDiv = false;
+   }
 
-    this.diplayImg = true;
-    this.displayDiv = false;
-  }
 
-  showP(x): void {
-    console.log(x);
-  }
 }

@@ -95,7 +95,6 @@ export class ProductsListComponent implements OnInit {
   }
   showPic() {
     this.displayCarousel = !this.displayCarousel;
-
     this.diplayImg = true;
     this.displayDiv = false;
   }
