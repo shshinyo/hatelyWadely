@@ -9,7 +9,6 @@ import { OffersComponent } from "./offers/offers.component";
 import { SoonComponent } from "./soon/soon.component";
 import { OurServiceComponent } from "./our-service/our-service.component";
 import { ContactsComponent } from "./contacts/contacts.component";
-import { ShopModule } from "./shop/shop.module";
 
 @NgModule({
   declarations: [
@@ -24,7 +23,6 @@ import { ShopModule } from "./shop/shop.module";
     RouterModule.forChild(routes),
     SharedModule,
     DragDropModule,
-    ShopModule,
   ],
   providers: [],
 })

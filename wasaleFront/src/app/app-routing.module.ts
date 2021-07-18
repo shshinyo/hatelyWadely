@@ -8,13 +8,13 @@ import { AdminGuard } from "./core/Guards/admin.guard";
 const routes: Routes = [
   {
     path: "",
-    redirectTo: "",
-    pathMatch: "full",
-  },
-  {
-    path: "",
     component: GlobalComponent,
     children: [
+      {
+        path: "",
+        redirectTo: "",
+        pathMatch: "full",
+      },
       {
         path: "",
         loadChildren: () => import("./pages/pages.module").then((m) => m.PagesModule),
@@ -24,12 +24,19 @@ const routes: Routes = [
         loadChildren: () => import("./user/user.module").then((m) => m.UserModule),
       },
       {
-        path: "hatlyWadely-shop",
-        loadChildren: () => import("./pages/souq/souq.module").then((m) => m.SouqModule),
+        path: "shop",
+        data: { preload: false },
+        loadChildren: () => import("./pages/shop/shop.module").then((m) => m.ShopModule),
       },
+      // {
+      //   path: "hatlyWadely-shop",
+      //   data: { preload: false },
+      //   loadChildren: () => import("./pages/souq/souq.module").then((m) => m.SouqModule),
+      // },
       {
         path: "cart",
-        loadChildren: () => import("./pages/souq/cart/cart.module").then((m) => m.CartModule),
+        loadChildren: () =>
+          import("./pages/souq/cart/cart.module").then((m) => m.CartModule),
       },
       {
         path: "notfound",
@@ -47,13 +54,11 @@ const routes: Routes = [
     path: "notfound",
     component: Dashboard404,
   },
-
-
-  // {
-  //   path: "",
-  //   redirectTo: "",
-  //   pathMatch: "full",
-  // },
+  {
+    path: "",
+    redirectTo: "",
+    pathMatch: "full",
+  },
   {
     path: "**",
     redirectTo: "notfound",

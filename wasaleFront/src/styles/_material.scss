@@ -75,13 +75,13 @@ $config: mat.define-typography-config();
 
 @include mat.all-component-themes($theme);
 
-.material-icons {
-  font-size: 24px;
-  font-family: "Material Icons Round", "Material Icons";
-  .mat-badge-content {
-    font-family: "Roboto";
-  }
-}
+// .material-icons {
+//   font-size: 24px;
+//   font-family: "Material Icons Round", "Material Icons";
+//   .mat-badge-content {
+//     font-family: "Roboto";
+//   }
+// }
 
 //snake bare
 .snack-success {

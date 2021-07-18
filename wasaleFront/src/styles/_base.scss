@@ -90,7 +90,15 @@ $color: #ff6e00;
     margin: 0 5px;
   }
 }
+/* images ***************/
+.svg-icon{
+  height: 22px;
+  width: 22px;
+  // object-fit: contain;
+  margin: 0 4px;
+}
 
+//
 .button1:hover {
   color: $color;
 }

@@ -33,7 +33,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     DashboardModule,
     UserModule,
     GlobalModule,
-    SouqModule,
+    // SouqModule,
+    ShopModule,
     CartModule,
     ToastrModule.forRoot(),
     TranslateModule.forRoot({

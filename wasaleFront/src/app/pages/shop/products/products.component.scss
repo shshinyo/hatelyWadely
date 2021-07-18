@@ -2,7 +2,6 @@ $color: #ff6e00;
 .body-container {
   width: 100%;
   background-color: whitesmoke;
-
 }
 .sub-header {
   position: sticky;
@@ -35,6 +34,7 @@ $color: #ff6e00;
   .ads {
     height: 100%;
     border-radius: 5px;
+    transition: 0.1s ease-in-out;
   }
   .sideNav {
     background-color: #ffff;
@@ -51,6 +51,8 @@ $color: #ff6e00;
       color: $color;
     }
   }
+  //       style="position: relative; right: 1px; height: 370px; top: 22px"
+
   // just leave it alone (-_-)
   .carousel {
     background-color: #ffff;
@@ -74,8 +76,19 @@ $color: #ff6e00;
   .ads {
     .ad {
       height: 47%;
-      border-radius: 5px;
+      border-radius: 4px;
       background-color: $color;
+      img {
+        max-height: 100%;
+        min-height: 100%;
+        border-radius: 4px;
+        outline: none;
+        border: none;
+      }
+    }
+    .ad:hover,
+    .ad:active {
+      cursor: pointer;
     }
   }
   .filterBanner {
@@ -86,6 +99,21 @@ $color: #ff6e00;
 }
 
 .best-seller {
+  .title {
+    height: 40px;
+    border-radius: 4px;
+    margin: 4px 10px;
+    padding: 4px 5px;
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .show-all {
+    font-size: 18px;
+    text-decoration: none;
+  }
+  .show-all:hover {
+    cursor: pointer;
+  }
   min-height: 250px;
   margin-bottom: 20px;
   background-color: #ffffff;
@@ -103,51 +131,33 @@ $color: #ff6e00;
   }
 }
 
-.filterDiv {
-  font-weight: bold;
-  text-align: center;
-  float: right;
-  display: inline;
-  border-radius: 10px;
-  background-color: #f8f8f8;
-  width: 170px;
-  height: 180px;
-}
-#typeDiv {
-  width: 530px;
-  position: absolute;
-  right: 372px;
-  top: 95px;
-  z-index: 2;
-}
-.myIconImg {
-  height: 20px;
-  width: 20px;
-  position: relative;
-  left: 4px;
-}
-
-.grateOffer {
+.offer-con {
   height: 280px;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 4px;
   margin-bottom: 20px;
   background-color: #ffffff;
+  img {
+    max-height: 100%;
+    min-height: 100%;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+  }
   .subOffer {
     height: 100%;
-    border-radius: 5px;
+    border-radius: 4px;
     background-color: #6d5bbe;
-    transition: .1s ease-in;
+    transition: 0.1s ease-in;
   }
   .subOffer:hover,
   .subOffer:checked {
     cursor: pointer;
-    -webkit-box-shadow: 0px 0px 15px 6px rgba(214, 214, 214, 1);
-    -moz-box-shadow: 0px 0px 15px 6px rgba(214, 214, 214, 1);
-    box-shadow: 0px 0px 15px 6px rgba(214, 214, 214, 1);
+    -webkit-box-shadow: 0px 0px 4px 4px rgba(212, 212, 212, 1);
+    -moz-box-shadow: 0px 0px 4px 4px rgba(212, 212, 212, 1);
+    box-shadow: 0px 0px 4px 4px rgba(212, 212, 212, 1);
   }
 }
-
 
 /*old style
 .mainDiv {

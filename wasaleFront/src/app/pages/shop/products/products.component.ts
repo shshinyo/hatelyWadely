@@ -1,5 +1,8 @@
-import { Component, OnInit } from "@angular/core";
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { Router, ActivatedRoute } from "@angular/router";
+import { fromEvent } from "rxjs";
+import { debounceTime, map, filter } from "rxjs/Operators";
+import { ProductsService } from "src/app/shared/services/products.service";
 import { SouqService } from "src/app/shared/services/souq.service";
 import { QueryParams } from "src/app/shared/utilities/query-params";
 
@@ -8,10 +11,12 @@ import { QueryParams } from "src/app/shared/utilities/query-params";
   templateUrl: "./products.component.html",
   styleUrls: ["./products.component.scss"],
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent implements OnInit, AfterViewInit {
+  @ViewChild("sidNav") sidNav: ElementRef;
+  @ViewChild("filterBanner") filterBanner: ElementRef;
   //  hide and show on hover (filter & carouser)
   search: string | null = null;
-  carouselOffers$ = this._souqSer.Offers$;
+  //  hide and show on hover (filter & carouser)
   responsiveOptions: any[] = [
     {
       breakpoint: "1024px",
@@ -26,62 +31,79 @@ export class ProductsComponent implements OnInit {
       numVisible: 1,
     },
   ];
-
+  carouselOffers$ = this.souqSer.Offers$;
   products: any;
   filteredProducts: any;
-  displayDiv = false;
-  diplayImg = true;
-  selectedcategory;
-  constructor(
-    private _router: Router,
-    private _souqSer: SouqService,
-    private route: ActivatedRoute
-  ) {}
   // start cards
   cards: any;
   secondCards: any;
   footerArray: any;
 
   // end cards
+  constructor(
+    private _router: Router,
+    private _route: ActivatedRoute,
+    private productsService: ProductsService,
+    private souqSer: SouqService,
+    private route: ActivatedRoute
+  ) {}
+  ngAfterViewInit(): void {
+    // fromEvent(this.filterBanner.nativeElement, "mouseout").subscribe((_) => {
+    //   // this.displayCarousel = true;
+    //   console.log("sandjskahdjksahd");
+    // });
+  }
 
   ngOnInit(): void {
-    this._souqSer.getAllCategories().subscribe((res: any) => {
+    this.productsService.getAllCategories$.subscribe((res) => {
+      console.log(res);
       this.products = res.categories;
       this.filteredProducts = res.categories;
       this.cards = res.cards;
       this.secondCards = res.secondCards;
       this.footerArray = res.myFooter;
-    })
+    });
   }
 
   onSearch(value: string): void {
     this._router.navigate([], {
       queryParams: {
-        [QueryParams.Index]: null,
         [QueryParams.Search]: value || null,
       },
       queryParamsHandling: "merge",
     });
   }
 
-  hover(product) {
-    this.filteredProducts = this.products.find(
-      (elem) => elem.name == product.name
-    ).myProducts;
-    this.displayDiv = true;
-    this.diplayImg = false;
-    this.selectedcategory = product.id;
-    console.log(this.selectedcategory);
-    this._souqSer.selectedCategoryBehaviour.next(this.selectedcategory);
+  onHoverOnTap(product?) {
+    if (product) {
+      this.filteredProducts = this.products.find(
+        (elem) => elem.name == product.name
+      ).myProducts;
+    }
+
+    console.log(this.filteredProducts);
   }
-  // showDiv() {
-  //   this.diplayImg = false;
-  //   this.displayDiv = true;
-  // }
-   hideDiv() {
-     this.diplayImg = true;
-      this.displayDiv = false;
-   }
 
 
+  // test for search
+  private _fetchItem(): void {
+    this.productsService.getAllCategories$
+      .pipe(
+        map((x) => {
+          x.categories.map((c) => {
+            c.myProducts.map((t) => {
+              t.myProductss.map((products) => {
+                console.log(products);
+                products.details.map((product) => {
+                  product.filter((d) => {
+                    this.search ? d.detail == this.search : true;
+                  });
+                });
+              });
+            });
+          });
+        })
+      )
+      .subscribe();
+  }
 }

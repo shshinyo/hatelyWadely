@@ -9,45 +9,38 @@ import { WelcomePageComponent } from "./welcome-page/welcome-page.component";
 export const routes: Routes = [
   {
     path: "",
+    redirectTo: "welcome",
+    pathMatch: "full",
+  },
+  {
+    path: "welcome",
+    component: WelcomePageComponent,
+  },
+  {
+    path: "offers",
+    component: OffersComponent,
+  },
+
+  {
+    path: "soon",
+    component: SoonComponent,
+  },
+  {
+    path: "ourService",
+    component: OurServiceComponent,
+  },
+  {
+    path: "contacts",
     children: [
       {
         path: "",
-        redirectTo: "/welcome",
-        pathMatch: "full",
+        component: ContactsComponent,
       },
       {
-        path: "welcome",
-        component: WelcomePageComponent,
-      },
-      {
-        path: "offers",
-        component: OffersComponent,
-      },
-      {
-        path: "shop",
-        loadChildren: () => import("./shop/shop.module").then((m) => m.ShopModule),
-      },
-      {
-        path: "soon",
-        component: SoonComponent,
-      },
-      {
-        path: "ourService",
-        component: OurServiceComponent,
-      },
-      {
-        path: "contacts",
-        children: [
-          {
-            path: "",
-            component: ContactsComponent,
-          },
-          {
-            path: "prices",
-            component: ContactsComponent,
-          },
-        ],
+        path: "prices",
+        component: ContactsComponent,
       },
     ],
   },
+
 ];
